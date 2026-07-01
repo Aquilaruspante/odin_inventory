@@ -13,7 +13,7 @@ const SQL = `
     INSERT INTO films (name, year, director, image, genre)
         VALUES
             ('Save Private Ryan', 1998, 'Steven Spielberg', 'https://upload.wikimedia.org/wikipedia/en/a/ac/Saving_Private_Ryan_poster.jpg', 'dramatic'),
-            ('The Withc', 2016, 'Robert Eggers', 'https://upload.wikimedia.org/wikipedia/en/b/bf/The_Witch_poster.png', 'horror'),
+            ('The Witch', 2016, 'Robert Eggers', 'https://upload.wikimedia.org/wikipedia/en/b/bf/The_Witch_poster.png', 'horror'),
             ('Idiocracy', 2006, 'Mike Judge', 'https://upload.wikimedia.org/wikipedia/en/6/6b/Idiocracy_movie_poster.jpg', 'comedy');
 `;
 
