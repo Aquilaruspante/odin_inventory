@@ -1,0 +1,13 @@
+<%- include('./header.ejs'); %>
+
+<main>
+    <% for (const film of films) { %>
+        <div>
+            <h3><%= film.name %></h3>
+            <img src="<%= film.image %>" alt="">
+            <p>Year: <%= film.year %></p>
+            <p>Director: <%= film.director %></p>
+            <p><%= film.genre %></p>
+        </div>
+    <% } %>
+</main>
