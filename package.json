@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "node --watch app.js"
+    "dev": "node --watch app.js",
+    "populatedb": "node --env-file-if-exists=.env ./db/populatedb.js"
   },
   "repository": {
     "type": "git",
