@@ -8,7 +8,11 @@
             <div class="film-details">
                 <p>Year: <%= film.year %></p>
                 <p>Director: <%= film.director %></p>
-                <p><%= film.genre %></p>
+                <p><%= film.genre %></p> 
+            </div>
+            <div class="button-section">
+                <a href=<%= `/film/${film.id}/update` %>>Update</a>
+                <a href=<%= `/film/${film.id}/delete` %>>Delete</a>
             </div>
         </div>
     <% } %>

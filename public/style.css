@@ -113,7 +113,7 @@ main {
 	padding-top: 50px;
 	display: flex;
 	flex-wrap: wrap;
-	gap: 62px;
+	gap: 60px;
 }
 
 img {
@@ -123,7 +123,7 @@ img {
 }
 
 .film-card {
-	height: 400px;
+	height: 430px;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -135,11 +135,36 @@ img {
 	flex-direction: column;
 	justify-content: space-between;
 	font-weight: 350;
+	padding: 3px;
 }
 
 .film-title {
 	font-size: 1.3rem;
 	text-align: center;
+	box-sizing: border-box;
+	padding: 3px;
+}
+
+.button-section {
+	display: flex;
+	justify-content: space-between;
+}
+
+.button-section a {
+	text-decoration: none;
+	font-weight: 400;
+	font-size: 1.1rem;
+	color: rgb(63, 43, 7);
+	border: 1px solid rgb(255, 255, 255);
+	box-sizing: border-box;
+	padding: 3px;
+	width: 50%;
+	text-align: center;
+}
+
+.button-section a:hover {
+	color: var(--secondary-color);
+	transition: 0.4s;
 }
 
 form {
