@@ -7,9 +7,7 @@ router.get('/', filmCcontrollers.filmListGet);
 
 router.get('/new', filmCcontrollers.filmCreateGet);
 
-router.post('/new', (req, res) => {
-    res.send('adding new film to the database');
-});
+router.post('/new', filmCcontrollers.filmCreatePost);
 
 router.get('/update', (req, res) => {
     res.send('updating film');
