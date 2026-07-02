@@ -56,6 +56,7 @@ html {
 	--background-color: rgb(216, 216, 200);
 	--secondary-color: rgb(207, 138, 11);
 	--text-color: rgb(85, 57, 4);
+	--secondary-negative-color: rgb(247, 245, 241);
 }
 
 body {
@@ -136,4 +137,83 @@ img {
 .film-title {
 	font-size: 1.3rem;
 	text-align: center;
+}
+
+form {
+	height: 400px;
+	min-width: 500px;
+	border: 1px solid var(--secondary-color);
+	border-radius: 5px;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	margin: auto;
+}
+
+#form-header {
+	background-color: var(--secondary-color);
+	box-sizing: border-box;
+	padding: 30px;
+	color: var(--secondary-negative-color);
+	font-size: 2rem;
+}
+
+#form-body {
+	flex-grow: 2;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	box-sizing: border-box;
+	padding: 30px;
+	font-size: 1.2rem;
+}
+
+.form-section {
+	display: flex;
+	justify-content: space-between;
+}
+
+.form-input {
+	width: 70%;
+	height: 15px;
+	color: var(--text-color);
+}
+
+.form-input:focus {
+	outline-color: var(--secondary-color);
+}
+
+form button {
+	background-color: var(--secondary-color);
+	border: none;
+	outline: none;
+	height: 20px;
+	border-radius: 5px;
+	color: var(--secondary-negative-color);
+	box-sizing: border-box;
+	padding: 2px;
+}
+
+
+.oswald-title {
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+
+.oswald-text {
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.oswald-card-title {
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
 }

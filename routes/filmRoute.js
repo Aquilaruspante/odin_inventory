@@ -1,14 +1,11 @@
 const { Router } = require('express');
+const filmCcontrollers = require('../controllers/filmCcontrollers');
 
 const router = new Router();
 
-router.get('/', (req, res) => {
-    res.send('list of films');
-});
+router.get('/', filmCcontrollers.filmListGet);
 
-router.get('/new', (req, res) => {
-    res.send('add film form');
-});
+router.get('/new', filmCcontrollers.filmCreateGet);
 
 router.post('/new', (req, res) => {
     res.send('adding new film to the database');

@@ -19,4 +19,4 @@ app.listen(process.env.PORT || 3000, (error) => {
     if (error) return console.log('Failed to start server!');
 
     console.log(`Server listening on port ${process.env.PORT || 3000}`);
-})
+});
