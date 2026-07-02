@@ -1,0 +1,29 @@
+<%- include('header.ejs'); %>
+
+<form action="/film/new" method="POST">
+    <div class="form-section">
+        <label for="title">Title</label>
+        <input type="text" name="title" id="title">
+    </div>
+    <div class="form-section">
+        <label for="year">Year</label>
+        <input type="number" name="year" id="year">
+    </div>
+    <div class="form-section">
+        <label for="image">Image URL</label>
+        <input type="text" name="image" id="image">
+    </div>
+    <div class="form-section">
+        <label for="director">Director</label>
+        <input type="text" name="director" id="director">
+    </div>
+    <select name="genre" id="genre-select">
+        <option value="">--Please choose a genre--</option>
+        <option value="dramatic">Dramatic</option>
+        <option value="horror">Horror</option>
+        <option value="comedy">Comedy</option>
+    </select>
+    <button>Add</button>
+</form>
+</main>
+</body>
