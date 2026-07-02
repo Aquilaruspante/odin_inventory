@@ -2,12 +2,14 @@
 
 <main>
     <% for (const film of films) { %>
-        <div>
-            <h3><%= film.name %></h3>
+        <div class="film-card">
+            <h3 class="film-title"><%= film.name %></h3>
             <img src="<%= film.image %>" alt="">
-            <p>Year: <%= film.year %></p>
-            <p>Director: <%= film.director %></p>
-            <p><%= film.genre %></p>
+            <div class="film-details">
+                <p>Year: <%= film.year %></p>
+                <p>Director: <%= film.director %></p>
+                <p><%= film.genre %></p>
+            </div>
         </div>
     <% } %>
 </main>
