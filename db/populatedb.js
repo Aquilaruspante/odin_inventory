@@ -1,6 +1,8 @@
 const { Client } = require('pg');
 
 const SQL = `
+    DROP TABLE films;
+
     CREATE TABLE IF NOT EXISTS films (
         id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
         name VARCHAR (255) NOT NULL,
