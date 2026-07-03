@@ -1,25 +1,25 @@
 <%- include('./header.ejs'); %>
 
-<form action="/film/new" method="POST">
+<form action="/film/<%= film[0].id %>/update" method="POST">
     <div id="form-header">
         <h2 class="oswald-title">Add Film</h2>
     </div>
     <div id="form-body">
         <div class="form-section">
             <label for="title">Title</label>
-            <input class="form-input" type="text" name="title" id="title">
+            <input class="form-input" type="text" name="title" id="title" value="<% if (locals.film) { %><%= film[0].name %><% } %>">
         </div>
         <div class="form-section">
             <label for="year">Year</label>
-            <input class="form-input" type="number" name="year" id="year">
+            <input class="form-input" type="number" name="year" id="year" value="<% if (locals.film) { %><%= film[0].year %><% } %>">
         </div>
         <div class="form-section">
             <label for="image">Image URL</label>
-            <input class="form-input" type="text" name="image" id="image">
+            <input class="form-input" type="text" name="image" id="image" value="<% if (locals.film) { %><%= film[0].image %><% } %>">
         </div>
         <div class="form-section">
             <label for="director">Director</label>
-            <input class="form-input" type="text" name="director" id="director">
+            <input class="form-input" type="text" name="director" id="director" value="<% if (locals.film) { %><%= film[0].director %><% } %>">
         </div>
         <select name="genre" id="genre-select">
             <option value="">--Please choose a genre--</option>
@@ -27,6 +27,7 @@
             <option value="horror">Horror</option>
             <option value="comedy">Comedy</option>
         </select>
+        <input type="hidden" name="id" value="<%= film[0].id %>">
         <button>ADD</button>
     </div>
     

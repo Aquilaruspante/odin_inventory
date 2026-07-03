@@ -1,7 +1,7 @@
 const { Router } = require('express');
 const filmCcontrollers = require('../controllers/filmCcontrollers');
 
-const router = new Router();
+const router = new Router({ mergeParams: true });
 
 router.get('/', filmCcontrollers.filmListGet);
 
@@ -9,13 +9,9 @@ router.get('/new', filmCcontrollers.filmCreateGet);
 
 router.post('/new', filmCcontrollers.filmCreatePost);
 
-router.get('/update', (req, res) => {
-    res.send('updating film');
-});
+router.get('/:id/update/', filmCcontrollers.filmUpdateGet);
 
-router.post('update', (req, res) => {
-    res.send('update film on the database');
-});
+router.post('/:id/update', filmCcontrollers.filmUpdatePost);
 
 router.post('/delete', (req, res) => {
     res.send('delete film');
