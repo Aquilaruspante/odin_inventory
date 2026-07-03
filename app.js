@@ -16,6 +16,10 @@ app.use('/film', filmRouter);
 
 app.get('/', filmControllers.filmListGet);
 
+app.all('/{*splat}', (req, res) => {
+    res.status(404).send('Page not found');
+});
+
 app.listen(process.env.PORT || 3000, (error) => {
     if (error) return console.log('Failed to start server!');
 

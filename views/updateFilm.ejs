@@ -1,6 +1,6 @@
 <%- include('./header.ejs'); %>
 
-<form action="/film/<%= film[0].id %>/update" method="POST">
+<form class="form" action="/film/<%= film[0].id %>/update" method="POST">
     <div id="form-header">
         <h2 class="oswald-title">Add Film</h2>
     </div>
@@ -28,7 +28,7 @@
             <option value="comedy">Comedy</option>
         </select>
         <input type="hidden" name="id" value="<%= film[0].id %>">
-        <button>ADD</button>
+        <button class="form-button">ADD</button>
     </div>
     
 </form>

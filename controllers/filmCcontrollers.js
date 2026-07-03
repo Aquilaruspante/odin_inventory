@@ -26,3 +26,9 @@ exports.filmUpdatePost = async function filmUpdatePost (req, res) {
     await db.filmUpdate(id, title, year, image, director, genre);
     res.redirect('/');
 };
+
+exports.filmDelete = async function filmDelete (req, res) {
+    const { id } = req.params;
+    await db.filmDelete(id);
+    res.redirect('/');
+};

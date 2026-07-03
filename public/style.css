@@ -59,6 +59,28 @@ html {
 	--secondary-negative-color: rgb(247, 245, 241);
 }
 
+.oswald-title {
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+
+.oswald-text {
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.oswald-card-title {
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 450;
+  font-style: normal;
+}
+
 body {
 	height: 100vh;
 	background-color: var(--background-color);
@@ -160,6 +182,9 @@ img {
 	padding: 3px;
 	width: 50%;
 	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .button-section a:hover {
@@ -167,7 +192,32 @@ img {
 	transition: 0.4s;
 }
 
-form {
+.delete-button {
+	border: none;
+	outline: none;
+	background-color: var(--background-color);
+	width: 100%;
+	height: 100%;
+	border: 1px solid rgb(255, 255, 255);
+	font-weight: 400;
+	font-size: 1.1rem;
+	color: rgb(63, 43, 7);
+	box-sizing: border-box;
+	padding: 3px;
+	text-align: center;
+}
+
+.delete-button:hover {
+	color: var(--secondary-color);
+	transition: 0.4s;
+	cursor: pointer;
+}
+
+.delete-form {
+	width: 50%;
+}
+
+.form {
 	height: 400px;
 	min-width: 500px;
 	border: 1px solid var(--secondary-color);
@@ -212,7 +262,7 @@ form {
 	outline-color: var(--secondary-color);
 }
 
-form button {
+.form-button {
 	background-color: var(--secondary-color);
 	border: none;
 	outline: none;
@@ -221,27 +271,4 @@ form button {
 	color: var(--secondary-negative-color);
 	box-sizing: border-box;
 	padding: 2px;
-}
-
-
-.oswald-title {
-  font-family: "Oswald", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 700;
-  font-style: normal;
-}
-
-
-.oswald-text {
-  font-family: "Oswald", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 300;
-  font-style: normal;
-}
-
-.oswald-card-title {
-  font-family: "Oswald", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 450;
-  font-style: normal;
 }

@@ -25,3 +25,7 @@ exports.filmUpdate = async function filmUpdate (id, name, year, image, director,
         WHERE id=$6;    
     `, [name, year, image, director, genre, id]);
 };
+
+exports.filmDelete = async function filmDelete (id) {
+    await pool.query('DELETE FROM films WHERE id=$1', [id]);
+};

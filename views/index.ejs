@@ -11,8 +11,10 @@
                 <p><%= film.genre %></p> 
             </div>
             <div class="button-section">
-                <a href=<%= `/film/${film.id}/update` %>>Update</a>
-                <a href=<%= `/film/${film.id}/delete` %>>Delete</a>
+                <a class="bottom-card" href=<%= `/film/${film.id}/update` %>>Update</a>
+                <form class="delete-form bottom-card" action="<%= `/film/${film.id}/delete` %>" method="POST">
+                    <button class="delete-button oswald-text">Delete</button>
+                </form>
             </div>
         </div>
     <% } %>

@@ -13,8 +13,6 @@ router.get('/:id/update/', filmCcontrollers.filmUpdateGet);
 
 router.post('/:id/update', filmCcontrollers.filmUpdatePost);
 
-router.post('/delete', (req, res) => {
-    res.send('delete film');
-});
+router.post('/:id/delete', filmCcontrollers.filmDelete);
 
 module.exports = router;
