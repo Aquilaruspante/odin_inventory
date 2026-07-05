@@ -1,18 +1,18 @@
 const { Router } = require('express');
-const filmCcontrollers = require('../controllers/filmCcontrollers');
+const filmControllers = require('../controllers/filmCcontrollers');
 
 const router = new Router({ mergeParams: true });
 
-router.get('/', filmCcontrollers.filmListGet);
+router.get('/', filmControllers.filmListGet);
 
-router.get('/new', filmCcontrollers.filmCreateGet);
+router.get('/new', filmControllers.filmCreateGet);
 
-router.post('/new', filmCcontrollers.filmCreatePost);
+router.post('/new', filmControllers.filmCreatePost);
 
-router.get('/:id/update/', filmCcontrollers.filmUpdateGet);
+router.get('/:id/update/', filmControllers.filmUpdateGet);
 
-router.post('/:id/update', filmCcontrollers.filmUpdatePost);
+router.post('/:id/update', filmControllers.filmUpdatePost);
 
-router.post('/:id/delete', filmCcontrollers.filmDelete);
+router.post('/:id/delete', filmControllers.filmDelete);
 
 module.exports = router;
