@@ -1,22 +1,47 @@
 const { Client } = require('pg');
 
 const SQL = `
-    DROP TABLE films;
-
     CREATE TABLE IF NOT EXISTS films (
         id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
         name VARCHAR (255) NOT NULL,
         year INT NOT NULL,
         director VARCHAR (255),
         image VARCHAR (255),
-        genre VARCHAR (255)
+        genre INT NOT NULL
     );
 
     INSERT INTO films (name, year, director, image, genre)
         VALUES
-            ('Save Private Ryan', 1998, 'Steven Spielberg', 'https://upload.wikimedia.org/wikipedia/en/a/ac/Saving_Private_Ryan_poster.jpg', 'dramatic'),
-            ('The Witch', 2016, 'Robert Eggers', 'https://upload.wikimedia.org/wikipedia/en/b/bf/The_Witch_poster.png', 'horror'),
-            ('Idiocracy', 2006, 'Mike Judge', 'https://upload.wikimedia.org/wikipedia/en/6/6b/Idiocracy_movie_poster.jpg', 'comedy');
+            ('Save Private Ryan', 1998, 'Steven Spielberg', 'https://upload.wikimedia.org/wikipedia/en/a/ac/Saving_Private_Ryan_poster.jpg', 1),
+            ('The Witch', 2016, 'Robert Eggers', 'https://upload.wikimedia.org/wikipedia/en/b/bf/The_Witch_poster.png', 2),
+            ('Idiocracy', 2006, 'Mike Judge', 'https://upload.wikimedia.org/wikipedia/en/6/6b/Idiocracy_movie_poster.jpg', 3);
+
+    
+    CREATE TABLE IF NOT EXISTS genres (
+        id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+        name VARCHAR (255)
+    );
+
+    INSERT INTO genres (name)
+        VALUES 
+            ('Drama'),
+            ('Horror'),
+            ('Comedy');
+
+
+    CREATE TABLE IF NOT EXISTS relations (
+        film_id INT NOT NULL,
+        genre_id INT NOT NULL,
+        PRIMARY KEY (film_id, genre_id),
+        FOREIGN KEY (film_id) REFERENCES films(id),
+        FOREIGN KEY (genre_id) REFERENCES genres(id)
+    );
+
+    INSERT INTO relations (film_id, genre_id)
+        VALUES 
+            (1, 1),
+            (2, 2),
+            (3, 3);
 `;
 
 async function main() {
