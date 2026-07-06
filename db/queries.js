@@ -1,7 +1,13 @@
 const pool = require('./pool');
 
 exports.filmListGet = async function filmListGet () {
-    const { rows } = await pool.query('SELECT * FROM films;');
+    const { rows } = await pool.query(`
+            SELECT f.name, f.year, f.image, f.director, g.name as genre
+            FROM films as f JOIN relations ON f.id=relations.film_id 
+            JOIN genres as g ON relations.genre_id=g.id;
+        `
+    );
+
     return rows;
 };
 

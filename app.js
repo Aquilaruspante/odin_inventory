@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('node:path');
 
 const filmRouter = require('./routes/filmRoute');
-const filmControllers = require('./controllers/filmCcontrollers');
+const filmControllers = require('./controllers/filmControllers');
 
 const app = express();
 

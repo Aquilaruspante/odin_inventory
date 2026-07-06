@@ -1,5 +1,5 @@
 const { Router } = require('express');
-const filmControllers = require('../controllers/filmCcontrollers');
+const filmControllers = require('../controllers/filmControllers');
 
 const router = new Router({ mergeParams: true });
 
