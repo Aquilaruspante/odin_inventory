@@ -13,12 +13,18 @@ exports.filmListGet = async function filmListGet () {
     return rows;
 };
 
-exports.filmCreate = async function filmCreate (name, year, director, image, genreId) {
+exports.filmCreate = async function filmCreate (name, year, director, image, genre) {
     await pool.query(`
-        INSERT INTO films (name, year, director, image, genre)
-            VALUES
-                ($1, $2, $3, $4, $5)
-        `, [name, year, director, image, genreId]);
+            WITH new_film AS (
+                INSERT INTO films (name, year, director, image)
+                VALUES ($1, $2, $3, $4)
+                RETURNING id
+            )
+            INSERT INTO relations (film_id, genre_id)
+            SELECT new_film.id, genres.id
+            FROM new_film, genres
+            WHERE genres.name = $5;
+        `, [name, year, director, image, genre])
 };
 
 exports.filmGet = async function filmGet (id) {
@@ -43,16 +49,3 @@ exports.getFilmIdByName = async function getFilmIdByName(name) {
     return rows[0].id;
 };
 
-/*-----------------------------GENRES-----------------------------*/
-
-exports.genreGetIdFromName = async function genreGetIdFromName(name) {
-    const { rows } = await pool.query(`SELECT id FROM genres WHERE name='${name}';`);
-    return rows;
-};
-
-
-/* ------------------------ RELATIONS-------------------------*/
-
-exports.relationCreate = async function relationCreate(filmId, genreId) {
-    await pool.query('INSERT INTO relations (film_id, genre_id) VALUES ($1, $2)', [filmId, genreId]);
-}

@@ -6,15 +6,14 @@ const SQL = `
         name VARCHAR (255) NOT NULL,
         year INT NOT NULL,
         director VARCHAR (255),
-        image VARCHAR (255),
-        genre INT NOT NULL
+        image VARCHAR
     );
 
-    INSERT INTO films (name, year, director, image, genre)
+    INSERT INTO films (name, year, director, image)
         VALUES
-            ('Save Private Ryan', 1998, 'Steven Spielberg', 'https://upload.wikimedia.org/wikipedia/en/a/ac/Saving_Private_Ryan_poster.jpg', 1),
-            ('The Witch', 2016, 'Robert Eggers', 'https://upload.wikimedia.org/wikipedia/en/b/bf/The_Witch_poster.png', 2),
-            ('Idiocracy', 2006, 'Mike Judge', 'https://upload.wikimedia.org/wikipedia/en/6/6b/Idiocracy_movie_poster.jpg', 3);
+            ('Save Private Ryan', 1998, 'Steven Spielberg', 'https://upload.wikimedia.org/wikipedia/en/a/ac/Saving_Private_Ryan_poster.jpg'),
+            ('The Witch', 2016, 'Robert Eggers', 'https://upload.wikimedia.org/wikipedia/en/b/bf/The_Witch_poster.png'),
+            ('Idiocracy', 2006, 'Mike Judge', 'https://upload.wikimedia.org/wikipedia/en/6/6b/Idiocracy_movie_poster.jpg');
 
     
     CREATE TABLE IF NOT EXISTS genres (

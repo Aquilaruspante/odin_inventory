@@ -11,13 +11,7 @@ exports.filmCreateGet = function filmCreateGet (req, res) {
 
 exports.filmCreatePost = async function filmCreatePost (req, res) {
     const { title, year, director, image, genre } = req.body;
-    
-    const genreIds = await db.genreGetIdFromName(genre);
-    const { id } = genreIds[0]
-
-    await db.filmCreate(title, year, director, image, id);
-    const filmId = await db.getFilmIdByName(title);
-    await db.relationCreate(filmId, id);
+    await db.filmCreate(title, year, director, image, genre);
     res.redirect('/');
 };
 
