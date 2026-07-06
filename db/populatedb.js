@@ -24,9 +24,9 @@ const SQL = `
 
     INSERT INTO genres (name)
         VALUES 
-            ('Drama'),
-            ('Horror'),
-            ('Comedy');
+            ('drama'),
+            ('horror'),
+            ('comedy');
 
 
     CREATE TABLE IF NOT EXISTS relations (

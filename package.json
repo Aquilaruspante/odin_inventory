@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "node --watch --env-file-if-exists=.env app.js",
-    "populatedb": "node --env-file-if-exists=.env ./db/populatedb.js"
+    "populatedb": "node --env-file-if-exists=.env ./db/populatedb.js",
+    "droptables": "node --env-file-if-exists=.env ./db/dropdb.js"
   },
   "repository": {
     "type": "git",
