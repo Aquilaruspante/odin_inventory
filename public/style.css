@@ -256,6 +256,7 @@ img {
 	width: 70%;
 	height: 15px;
 	color: var(--text-color);
+	border: 1px solid var(--secondary-color)
 }
 
 .form-input:focus {
@@ -271,4 +272,25 @@ img {
 	color: var(--secondary-negative-color);
 	box-sizing: border-box;
 	padding: 2px;
+}
+
+.genre-input-section {
+	position: relative;
+}
+
+.genre-selection-menu {
+	position: absolute;
+	width: 71%;
+	left: 28.5%;
+	background-color: rgb(241, 240, 236);
+	border: 1px solid var(--secondary-color);
+}
+
+.genre-selection-element {
+	box-sizing: border-box;
+	padding: 3px;
+}
+
+.hidden {
+	display: none;
 }

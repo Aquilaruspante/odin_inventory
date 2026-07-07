@@ -7,29 +7,35 @@
     <div id="form-body">
         <div class="form-section">
             <label for="title">Title</label>
-            <input class="form-input" type="text" name="title" id="title">
+            <input class="form-input non-interactive" type="text" name="title" id="title">
         </div>
         <div class="form-section">
             <label for="year">Year</label>
-            <input class="form-input" type="number" name="year" id="year">
+            <input class="form-input non-interactive" type="number" name="year" id="year">
         </div>
         <div class="form-section">
             <label for="image">Image URL</label>
-            <input class="form-input" type="text" name="image" id="image">
+            <input class="form-input non-interactive" type="text" name="image" id="image">
         </div>
         <div class="form-section">
             <label for="director">Director</label>
-            <input class="form-input" type="text" name="director" id="director">
+            <input class="form-input non-interactive" type="text" name="director" id="director">
         </div>
-        <select name="genre" id="genre-select">
-            <option value="">--Please choose a genre--</option>
-            <option value="drama">Drama</option>
-            <option value="horror">Horror</option>
-            <option value="comedy">Comedy</option>
-        </select>
+        <div class="genre-input-section">
+            <div class="form-section">
+                <label for="genre">Genre</label>
+                <input class="form-input genre-input" type="text" id="genre" name="genre">
+            </div>
+            <ul class="genre-selection-menu hidden">
+                <% for (const genre of genres) { %>
+                    <li class="genre-selection-element"><%= genre.name %></li>
+                <% } %>
+            </ul>
+        </div>
         <button class="form-button">ADD</button>
     </div>
     
 </form>
 </main>
+<script src="/toggleMenu.js"></script>
 </body>
