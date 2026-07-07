@@ -1,4 +1,6 @@
 genreInput.addEventListener('keydown', (e) => {
+    genreInput.placeholder = 'Press Tab to add...';
+
     if (e.key === 'ArrowDown') {
         counter++;
         if (counter === toggleMenuItems.length + 1) counter = 1;
@@ -17,3 +19,21 @@ genreInput.addEventListener('keydown', (e) => {
         };
     });
 });
+
+genreInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Tab' && counter !== 0) {
+        e.preventDefault();
+        toggleMenuItems.forEach((item, index) => {
+            if (index + 1 === counter) {
+                genreInput.value = genreInput.value + `${item.innerText} `;
+            }
+        });
+    };
+});
+
+toggleMenuItems.forEach(item => {
+    item.addEventListener('click', (e) => {
+        console.log('click');
+        genreInput.value = genreInput.value + `${item.innerText} `;
+    })
+})

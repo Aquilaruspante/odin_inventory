@@ -15,5 +15,6 @@ genreInput.addEventListener('focus', () => {
 });
 
 genreInput.addEventListener('blur', () => {
+    genreInput.placeholder = 'Search or add genre...';
     menu.classList.add('hidden');
 });
