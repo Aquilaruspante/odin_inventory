@@ -291,6 +291,12 @@ img {
 	padding: 3px;
 }
 
+.genre-selection-element:hover {
+	background-color: var(--secondary-color);
+	color: white;
+	cursor: pointer;
+}
+
 .hidden {
 	display: none;
 }
