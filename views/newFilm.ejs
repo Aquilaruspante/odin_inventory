@@ -24,7 +24,7 @@
         <div class="genre-input-section">
             <div class="form-section">
                 <label for="genre">Genre</label>
-                <input class="form-input genre-input" type="text" id="genre" name="genre">
+                <input class="form-input genre-input" type="text" id="genre" name="genre" placeholder="Search or add genre..." />
             </div>
             <ul class="genre-selection-menu hidden">
                 <% for (const genre of genres) { %>
@@ -38,4 +38,5 @@
 </form>
 </main>
 <script src="/toggleMenu.js"></script>
+<script src="/genreFetcher.js"></script>
 </body>
