@@ -1,5 +1,3 @@
-const toggleMenuItems = document.querySelectorAll('.genre-selection-element');
-
 genreInput.addEventListener('input', (e) => {
     toggleMenuItems.forEach((item) => {
         if (!item.innerText.includes(e.target.value)) {

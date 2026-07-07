@@ -1,11 +1,16 @@
 const menu = document.querySelector('.genre-selection-menu');
 const genreInput = document.querySelector('.genre-input');
-const body = document.querySelector('body');
+const toggleMenuItems = document.querySelectorAll('.genre-selection-element');
 
 let counter = 0;
 
 genreInput.addEventListener('focus', () => {
     counter = 0;
+    toggleMenuItems.forEach((item) => {
+        if (item.classList.contains('menu-item-focus')) {
+            item.classList.remove('menu-item-focus');
+        };
+    });
     menu.classList.toggle('hidden');
 });
 
