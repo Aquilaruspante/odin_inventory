@@ -14,12 +14,6 @@ genreInput.addEventListener('focus', () => {
     menu.classList.toggle('hidden');
 });
 
-genreInput.addEventListener('keydown', (e) => {
-    if (e.key === 'Tab') {
-        menu.classList.add('hidden');
-    };
-});
-
 genreInput.addEventListener('blur', () => {
     menu.classList.add('hidden');
 });
