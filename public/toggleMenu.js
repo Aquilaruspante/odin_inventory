@@ -6,10 +6,16 @@ formInputs.forEach(input => {
     input.addEventListener('click', () => {
         if (!menu.classList.contains('hidden')) {
             menu.classList.add('hidden');
-        }
-    })
-})
+        };
+    });
+});
 
-genreInput.addEventListener('click', () => {
+genreInput.addEventListener('focus', () => {
     menu.classList.toggle('hidden');
-})
+});
+
+genreInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Tab') {
+        menu.classList.add('hidden');
+    };
+});
