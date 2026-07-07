@@ -26,14 +26,15 @@ genreInput.addEventListener('keydown', (e) => {
         toggleMenuItems.forEach((item, index) => {
             if (index + 1 === counter) {
                 genreInput.value = genreInput.value + `${item.innerText} `;
-            }
+                item.classList.add('hidden');
+            };
         });
     };
 });
 
 toggleMenuItems.forEach(item => {
-    item.addEventListener('click', (e) => {
-        console.log('click');
+    item.addEventListener('mousedown', (e) => {
         genreInput.value = genreInput.value + `${item.innerText} `;
+        item.classList.add('hidden');
     })
 })
