@@ -2,7 +2,7 @@ const pool = require('./pool');
 
 let genreCache = null;
 
-async function getGenres() {
+async function getData() {
     if (genreCache === null) {
         const { rows } = await pool.query('SELECT * FROM genres;');
         genreCache = rows;
@@ -10,8 +10,8 @@ async function getGenres() {
     return genreCache;
 };
 
-function invalidateGenreCache() {
+function invalidateCache() {
     genreCache = null;
 };
 
-module.exports = { getGenres, invalidateGenreCache };
+module.exports = { getData, invalidateCache };
