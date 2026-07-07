@@ -294,3 +294,8 @@ img {
 .hidden {
 	display: none;
 }
+
+.menu-item-focus {
+	background-color: var(--secondary-color);
+	color: white
+}
