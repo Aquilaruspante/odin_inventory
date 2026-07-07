@@ -1,25 +1,25 @@
 <%- include('./header.ejs'); %>
 
-<form class="form" action="/film/new" method="POST">
+<form class="form" action="/film/new" method="POST" autocomplete="off">
     <div id="form-header">
         <h2 class="oswald-title">Add Film</h2>
     </div>
     <div id="form-body">
         <div class="form-section">
             <label for="title">Title</label>
-            <input class="form-input non-interactive" type="text" name="title" id="title">
+            <input class="form-input" type="text" name="title" id="title">
         </div>
         <div class="form-section">
             <label for="year">Year</label>
-            <input class="form-input non-interactive" type="number" name="year" id="year">
+            <input class="form-input" type="number" name="year" id="year">
         </div>
         <div class="form-section">
             <label for="image">Image URL</label>
-            <input class="form-input non-interactive" type="text" name="image" id="image">
+            <input class="form-input" type="text" name="image" id="image">
         </div>
         <div class="form-section">
             <label for="director">Director</label>
-            <input class="form-input non-interactive" type="text" name="director" id="director">
+            <input class="form-input" type="text" name="director" id="director">
         </div>
         <div class="genre-input-section">
             <div class="form-section">
