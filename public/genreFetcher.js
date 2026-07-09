@@ -15,6 +15,8 @@ genreInput.addEventListener('input', (e) => {
         };
     });
     const item = firstVisibleItem();
-    item.element.classList.add('menu-item-focus');
-    counter = item.index + 1;
+    if (item) {
+         item.element.classList.add('menu-item-focus');
+        counter = item.index + 1;
+    };
 });
