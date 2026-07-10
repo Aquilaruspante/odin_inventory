@@ -14,6 +14,7 @@ genreInput.addEventListener('keydown', (e) => {
                     e.preventDefault();
                     genreDisplay.appendChild(createGenreComponent(item.innerText));
                     item.classList.add('hidden');
+                    genreInput.value = '';
                 };
             };
         });
