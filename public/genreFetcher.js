@@ -12,6 +12,7 @@ genreInput.addEventListener('input', (e) => {
             item.classList.add('hidden');
         } else {
             item.classList.remove('hidden');
+            checkGenreDisplayForElement(item);
         };
     });
     const item = firstVisibleItem();
