@@ -314,6 +314,18 @@ img {
 	box-sizing: border-box;
 	padding: 5px;
 	display: flex;
+	flex-wrap: wrap;
 	gap: 15px;
 	padding: 10px;
+}
+
+.genre-display-element {
+	height: 20px;
+	box-sizing: border-box;
+	padding: 3px;
+	font-size: 0.9rem;
+	background-color: var(--secondary-color);
+	color: var(--secondary-negative-color);
+	text-align: center;
+	border-radius: 3px;
 }
