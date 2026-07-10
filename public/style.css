@@ -218,7 +218,7 @@ img {
 }
 
 .form {
-	height: 400px;
+	height: 450px;
 	min-width: 500px;
 	border: 1px solid var(--secondary-color);
 	border-radius: 5px;
@@ -304,4 +304,13 @@ img {
 .menu-item-focus {
 	background-color: var(--secondary-color);
 	color: white
+}
+
+.genre-display {
+	height: 50px;
+	margin-top: 15px;
+	background-color: rgb(228, 228, 213);
+	border-radius: 5px;
+	box-sizing: border-box;
+	padding: 5px;
 }

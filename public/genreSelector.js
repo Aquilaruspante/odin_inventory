@@ -28,18 +28,6 @@ genreInput.addEventListener('keydown', (e) => {
     manageItemFocus();
 });
 
-genreInput.addEventListener('keydown', (e) => {
-    if (e.key === 'Tab' && counter !== 0) {
-        e.preventDefault();
-        toggleMenuItems.forEach((item, index) => {
-            if (index + 1 === counter) {
-                genreInput.value = genreInput.value + `${item.innerText} `;
-                item.classList.add('hidden');
-            };
-        });
-    };
-});
-
 toggleMenuItems.forEach(item => {
     item.addEventListener('mousedown', (e) => {
         genreInput.value = genreInput.value + `${item.innerText} `;
