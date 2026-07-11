@@ -31,5 +31,6 @@ genreInput.addEventListener('keydown', (e) => {
 toggleMenuItems.forEach(item => {
     item.addEventListener('mousedown', (e) => {
         addItem(item, e);
+        hideTogglemenuIfItemsHidden();
     });
 });

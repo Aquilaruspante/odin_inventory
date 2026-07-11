@@ -7,12 +7,14 @@ const genreDisplayPlaceholder = document.querySelector('.genre-display-placehold
 let counter = 0;
 
 function checkGenreDisplayForElement(item) {
+    // hides item if already added to the display
     for (let i = 0; i < genreDisplay.childNodes.length; i++) {
         if (genreDisplay.childNodes[i].innerText === item.innerText && !item.classList.contains('hidden')) item.classList.add('hidden');
     };
 };
 
 function hideTogglemenuIfItemsHidden() {
+    // hides menu if all items hidden
     if (Array.from(toggleMenuItems).every(item => item.classList.contains('hidden'))) { 
         menu.classList.add('hidden'); 
     } else {
@@ -21,6 +23,7 @@ function hideTogglemenuIfItemsHidden() {
 };
 
 function manageVisibleItems(item, e) {
+    // if the item includes the text typed by the user and passed by argument e hide the item
     if (!item.innerText.includes(e.target.value)) {
         item.classList.add('hidden');
     } else {
@@ -30,6 +33,7 @@ function manageVisibleItems(item, e) {
 };
 
 function addItem(item, e) {
+    // add item to the display
     if (!Array.from(genreDisplay.childNodes).find(element => element.innerText === item.innerText)) {
         e.preventDefault();
         genreDisplayPlaceholder.classList.add('hidden');
