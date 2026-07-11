@@ -8,16 +8,12 @@ genreInput.addEventListener('input', (e) => {
     manageItemFocus();
     toggleMenuItems.forEach((item) => {
         item.classList.remove('menu-item-focus');
-        if (!item.innerText.includes(e.target.value)) {
-            item.classList.add('hidden');
-        } else {
-            item.classList.remove('hidden');
-            checkGenreDisplayForElement(item);
-        };
+        manageVisibleItems(item, e);
     });
     const item = firstVisibleItem();
     if (item) {
         item.element.classList.add('menu-item-focus');
         counter = item.index + 1;
     };
+    hideTogglemenuIfItemsHidden();
 });

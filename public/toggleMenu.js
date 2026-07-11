@@ -12,6 +12,23 @@ function checkGenreDisplayForElement(item) {
     };
 };
 
+function hideTogglemenuIfItemsHidden() {
+    if (Array.from(toggleMenuItems).every(item => item.classList.contains('hidden'))) { 
+        menu.classList.add('hidden'); 
+    } else {
+        menu.classList.remove('hidden');
+    };
+};
+
+function manageVisibleItems(item, e) {
+    if (!item.innerText.includes(e.target.value)) {
+        item.classList.add('hidden');
+    } else {
+        item.classList.remove('hidden');
+        checkGenreDisplayForElement(item);
+    };
+};
+
 genreInput.addEventListener('focus', () => {
     counter = 0;
     toggleMenuItems.forEach((item) => {
@@ -20,11 +37,7 @@ genreInput.addEventListener('focus', () => {
             item.classList.remove('menu-item-focus');
         };
     });
-    if (Array.from(toggleMenuItems).every(item => item.classList.contains('hidden'))) { 
-        menu.classList.add('hidden'); 
-    } else {
-        menu.classList.remove('hidden');
-    };
+    hideTogglemenuIfItemsHidden();
 });
 
 genreInput.addEventListener('blur', () => {
