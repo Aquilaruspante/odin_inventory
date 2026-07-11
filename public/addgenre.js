@@ -7,7 +7,7 @@ function createGenreComponent(value) {
 
 genreInput.addEventListener('keydown', (e) => {
     if (e.key === 'Tab' && counter !== 0) {
-        
+        console.log(counter);
         toggleMenuItems.forEach((item, index) => {
             if (index + 1 === counter) {
                 addItem(item, e);

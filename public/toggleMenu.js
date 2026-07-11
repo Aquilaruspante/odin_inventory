@@ -49,6 +49,7 @@ genreInput.addEventListener('focus', () => {
         };
     });
     hideTogglemenuIfItemsHidden();
+    console.log(counter);
 });
 
 genreInput.addEventListener('blur', () => {

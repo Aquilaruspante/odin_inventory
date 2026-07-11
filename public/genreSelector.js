@@ -1,6 +1,6 @@
 function manageItemFocus() {
     if (counter >= toggleMenuItems.length + 1) counter = 1;
-    if (counter <= 0) counter = toggleMenuItems.length;
+    if (counter < 0) counter = toggleMenuItems.length;
     toggleMenuItems.forEach((item, index) => {
         if (index + 1 === counter) { 
             item.classList.add('menu-item-focus');
