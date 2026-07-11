@@ -29,6 +29,17 @@ function manageVisibleItems(item, e) {
     };
 };
 
+function addItem(item, e) {
+    if (!Array.from(genreDisplay.childNodes).find(element => element.innerText === item.innerText)) {
+        e.preventDefault();
+        genreDisplayPlaceholder.classList.add('hidden');
+        genreDisplay.appendChild(createGenreComponent(item.innerText));
+        item.classList.add('hidden');
+        genreInput.value = '';
+        genreInput.placeholder = 'Search or add genre...';
+    };
+};
+
 genreInput.addEventListener('focus', () => {
     counter = 0;
     toggleMenuItems.forEach((item) => {

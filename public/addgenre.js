@@ -10,14 +10,7 @@ genreInput.addEventListener('keydown', (e) => {
         
         toggleMenuItems.forEach((item, index) => {
             if (index + 1 === counter) {
-                if (!Array.from(genreDisplay.childNodes).find(element => element.innerText === item.innerText)) {
-                    e.preventDefault();
-                    genreDisplayPlaceholder.classList.add('hidden');
-                    genreDisplay.appendChild(createGenreComponent(item.innerText));
-                    item.classList.add('hidden');
-                    genreInput.value = '';
-                    genreInput.placeholder = 'Search or add genre...';
-                };
+                addItem(item, e);
             };
             manageVisibleItems(item, e);
         });
