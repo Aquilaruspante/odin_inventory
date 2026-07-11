@@ -297,10 +297,6 @@ img {
 	cursor: pointer;
 }
 
-.hidden {
-	display: none;
-}
-
 .menu-item-focus {
 	background-color: var(--secondary-color);
 	color: white
@@ -328,4 +324,16 @@ img {
 	color: var(--secondary-negative-color);
 	text-align: center;
 	border-radius: 3px;
+}
+
+.genre-display-placeholder {
+	width: 100%;
+	color: rgb(189, 185, 174);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.hidden {
+	display: none;
 }

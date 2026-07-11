@@ -12,6 +12,7 @@ genreInput.addEventListener('keydown', (e) => {
             if (index + 1 === counter) {
                 if (!Array.from(genreDisplay.childNodes).find(element => element.innerText === item.innerText)) {
                     e.preventDefault();
+                    genreDisplayPlaceholder.classList.add('hidden');
                     genreDisplay.appendChild(createGenreComponent(item.innerText));
                     item.classList.add('hidden');
                     genreInput.value = '';

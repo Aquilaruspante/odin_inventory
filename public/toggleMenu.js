@@ -2,6 +2,7 @@ const menu = document.querySelector('.genre-selection-menu');
 const genreInput = document.querySelector('.genre-input');
 const toggleMenuItems = document.querySelectorAll('.genre-selection-element');
 const genreDisplay = document.querySelector('.genre-display');
+const genreDisplayPlaceholder = document.querySelector('.genre-display-placeholder');
 
 let counter = 0;
 
