@@ -20,7 +20,11 @@ genreInput.addEventListener('focus', () => {
             item.classList.remove('menu-item-focus');
         };
     });
-    menu.classList.toggle('hidden');
+    if (Array.from(toggleMenuItems).every(item => item.classList.contains('hidden'))) { 
+        menu.classList.add('hidden'); 
+    } else {
+        menu.classList.remove('hidden');
+    };
 });
 
 genreInput.addEventListener('blur', () => {

@@ -16,8 +16,10 @@ genreInput.addEventListener('keydown', (e) => {
                     genreDisplay.appendChild(createGenreComponent(item.innerText));
                     item.classList.add('hidden');
                     genreInput.value = '';
+                    genreInput.placeholder = 'Search or add genre...';
                 };
             };
         });
     };
+    if (Array.from(toggleMenuItems).every(item => item.classList.contains('hidden'))) menu.classList.add('hidden');
 });
