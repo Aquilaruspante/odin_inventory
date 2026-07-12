@@ -318,7 +318,7 @@ img {
 .genre-display-element {
 	height: 20px;
 	box-sizing: border-box;
-	padding: 3px;
+	padding: 5px;
 	font-size: 0.9rem;
 	background-color: var(--secondary-color);
 	color: var(--secondary-negative-color);
@@ -326,6 +326,7 @@ img {
 	border-radius: 3px;
 	display: flex;
 	gap: 5px;
+	align-items: center;
 }
 
 .genre-display-placeholder {
@@ -346,13 +347,8 @@ img {
 	outline: none;
 	color: var(--secondary-negative-color);
 	width: 10px;
+	height: 10px;
 	padding: 0px;
-}
-
-.close-button img {
-	width: 15px;
-	height: 15px;
-	color: var(--secondary-negative-color);
 }
 
 .close-button:hover {
