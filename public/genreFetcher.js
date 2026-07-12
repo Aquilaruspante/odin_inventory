@@ -1,4 +1,5 @@
 function firstVisibleItem() {
+    // returns first non hidden element
     for (let i = 0; i < toggleMenuItems.length; i++) {
         if (!toggleMenuItems[i].classList.contains('hidden')) return { element: toggleMenuItems[i], index: i };
     };

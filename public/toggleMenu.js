@@ -37,7 +37,9 @@ function addItem(item, e) {
     if (!Array.from(genreDisplay.childNodes).find(element => element.innerText === item.innerText)) {
         e.preventDefault();
         genreDisplayPlaceholder.classList.add('hidden');
-        genreDisplay.appendChild(createGenreComponent(item.innerText));
+        const { newElement, closeButton } = createGenreComponent(item.innerText);
+        genreDisplay.appendChild(newElement);
+        createRemoveEvent(newElement, closeButton);
         item.classList.add('hidden');
         genreInput.value = '';
         genreInput.placeholder = 'Search or add genre...';
@@ -53,7 +55,6 @@ genreInput.addEventListener('focus', () => {
         };
     });
     hideTogglemenuIfItemsHidden();
-    console.log(counter);
 });
 
 genreInput.addEventListener('blur', () => {
