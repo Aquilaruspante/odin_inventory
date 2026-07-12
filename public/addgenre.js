@@ -1,7 +1,16 @@
 function createGenreComponent(value) {
+    // create display genre button
     const newElement = document.createElement('div');
+    const newTextElement = document.createElement('div');
+    const closeButton = document.createElement('button');
+
+    newElement.appendChild(newTextElement);
+    newElement.appendChild(closeButton);
+
     newElement.classList.add('genre-display-element');
-    newElement.innerText = value;
+    closeButton.classList.add('close-button');
+    newTextElement.innerText = value;
+    closeButton.innerHTML = '<img src="/Close.png" />';
     return newElement;    
 };
 
