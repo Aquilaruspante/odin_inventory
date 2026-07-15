@@ -23,7 +23,7 @@ function hideTogglemenuIfItemsHidden() {
 };
 
 function manageVisibleItems(item, e) {
-    // if the item includes the text typed by the user and passed by argument e hide the item
+    // if the item does not include the text passed by event "e" hide the item
     if (!item.innerText.includes(e.target.value)) {
         item.classList.add('hidden');
     } else {

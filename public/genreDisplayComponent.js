@@ -31,14 +31,3 @@ function createGenreComponent(value) {
     return { newElement, closeButton };    
 };
 
-genreInput.addEventListener('keydown', (e) => {
-    if (e.key === 'Tab' && counter !== 0) {
-        toggleMenuItems.forEach((item, index) => {
-            if (index + 1 === counter) {
-                addItem(item, e);
-            };
-            manageVisibleItems(item, e);
-        });
-    };
-    hideTogglemenuIfItemsHidden();
-});
