@@ -47,7 +47,7 @@ exports.filmCreate = async function filmCreate (name, year, director, image, gen
 };
 
 exports.filmGet = async function filmGet (id) {
-    const { rows } = await pool.query(`SELECT * FROM films WHERE id=$1`, [id]);
+    const { rows } = await pool.query('SELECT f.name, f.year, f.director, f.image, array_agg(g.name) AS genres FROM films as f JOIN relations ON f.id=relations.film_id JOIN genres as g ON relations.genre_id=g.id WHERE f.id=$1 GROUP BY f.name, f.year, f.director, f.image;', [id]);
     return rows;
 };
 
@@ -107,3 +107,9 @@ exports.getFilmIdByName = async function getFilmIdByName(name) {
     return rows[0].id;
 };
 
+/* ---------------------------------------------------------GENRES-------------------*/
+
+exports.genresListGet = async function genresListGet() {
+    const { rows } = await pool.query('SELECT * FROM genres;');
+    return rows;
+};

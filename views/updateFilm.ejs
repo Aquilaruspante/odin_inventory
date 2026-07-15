@@ -21,16 +21,53 @@
             <label for="director">Director</label>
             <input class="form-input" type="text" name="director" id="director" value="<% if (locals.film) { %><%= film[0].director %><% } %>">
         </div>
-        <select name="genre" id="genre-select">
-            <option value="">--Please choose a genre--</option>
-            <option value="dramatic">Dramatic</option>
-            <option value="horror">Horror</option>
-            <option value="comedy">Comedy</option>
-        </select>
+        <div class="genre-input-section">
+            <div class="form-section">
+                <label for="genre">Genre</label>
+                <input class="form-input genre-input" type="text" id="genre" placeholder="Search or add genre..." />
+            </div>
+            <ul class="genre-selection-menu hidden">
+                <li class="add-new-genre hidden"></li>
+                <% for (const genre of genres) { %>
+                    <li class="genre-selection-element"><%= genre.name %></li>
+                <% } %>
+            </ul>
+            <div class="genre-display">
+                <% if (film[0].genres) { %>
+                    <% for (const genre of film[0].genres) { %>
+                        <div class="genre-display-element">
+                            <div><%= genre %></div><button type="button" class="close-button">
+                                <svg 
+                                    xmlns="http://www.w3.org/2000/svg" 
+                                    width="13" height="13" 
+                                    viewBox="0 0 24 24" 
+                                    fill="none" 
+                                    stroke="currentColor" 
+                                    stroke-width="2" 
+                                    stroke-linecap="round" 
+                                    stroke-linejoin="round" 
+                                    class="lucide lucide-x-icon lucide-x">
+                                    <path d="M18 6 6 18"/>
+                                    <path d="m6 6 12 12"/>
+                                </svg>    
+                            </button>
+                        </div>
+                    <% } %>
+                    
+                <% } else { %>
+                    <p class="genre-display-placeholder">NO GENRE SELECTED</p>
+                <% } %>
+            </div>
+        </div>
         <input type="hidden" name="id" value="<%= film[0].id %>">
         <button class="form-button">ADD</button>
     </div>
     
 </form>
 </main>
+<script src="/scripts/toggleMenuVisibility.js"></script>
+<script src="/scripts/manageMenuInput.js"></script>
+<script src="/scripts/genreDisplayComponent.js"></script>
+<script src="/scripts/removeGenre.js"></script>
+<script src="/scripts/createNewGenreInput.js"></script>
 </body>

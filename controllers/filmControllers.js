@@ -3,7 +3,6 @@ const genreCache = require('../db/genreCache');
 
 exports.filmListGet = async function filmListGet (req, res) {
     const films = await db.filmListGet();
-    console.log(films);
     res.render('index', { films });
 };
 
@@ -21,7 +20,9 @@ exports.filmCreatePost = async function filmCreatePost (req, res) {
 exports.filmUpdateGet = async function filmUpdateGet (req, res) {
     const { id } = req.params;
     const film = await db.filmGet(id);
-    res.render('updateFilm', { film });
+    console.log(film[0].genres);
+    const genres = await db.genresListGet();
+    res.render('updateFilm', { film, genres });
 }
 
 exports.filmUpdatePost = async function filmUpdatePost (req, res) {
