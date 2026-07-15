@@ -38,18 +38,22 @@ genreInput.addEventListener('keydown', (e) => {
     if (e.key === 'Tab' && counter !== 0) {
         toggleMenuItems.forEach((item, index) => {
             if (index + 1 === counter) {
-                addItem(item, e);
+                addItem(item.innerText, e);
+                item.classList.add('hidden');
             };
             manageVisibleItems(item, e);
         });
-    };
+    } else if (e.key === 'Tab' && noExistingGenreSelectFlag === true) {
+        addItem(genreInput.value, e);
+    }
     hideTogglemenuIfItemsHidden();
 });
 
 toggleMenuItems.forEach(item => {
     // Manage click selection
     item.addEventListener('mousedown', (e) => {
-        addItem(item, e);
+        addItem(item.innerText, e);
+        item.classList.add('hidden');
         hideTogglemenuIfItemsHidden();
     });
 });

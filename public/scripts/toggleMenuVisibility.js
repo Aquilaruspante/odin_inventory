@@ -6,6 +6,7 @@ const genreDisplayPlaceholder = document.querySelector('.genre-display-placehold
 const addNewGenreLi = document.querySelector('.add-new-genre');
 
 let counter = 0;
+let noExistingGenreSelectFlag = false;
 
 function checkGenreDisplayForElement(item) {
     // hides item if already added to the display
@@ -18,10 +19,13 @@ function hideTogglemenuIfItemsHidden() {
     // hides menu if all items hidden
     if (Array.from(toggleMenuItems).every(item => item.classList.contains('hidden'))) { 
         menu.classList.add('hidden'); 
+        counter = 0;
         addNewGenreLi.classList.remove('hidden');
+        noExistingGenreSelectFlag = true;
     } else {
         menu.classList.remove('hidden');
         addNewGenreLi.classList.add('hidden');
+        noExistingGenreSelectFlag = false;
     };
 };
 
@@ -43,15 +47,14 @@ function manageVisibleItems(item, e) {
     };
 };
 
-function addItem(item, e) {
+function addItem(value, e) {
     // add item to the display
-    if (!Array.from(genreDisplay.childNodes).find(element => element.innerText === item.innerText)) {
+    if (!Array.from(genreDisplay.childNodes).find(element => element.innerText === value)) {
         e.preventDefault();
         genreDisplayPlaceholder.classList.add('hidden');
-        const { newElement, closeButton } = createGenreComponent(item.innerText);
+        const { newElement, closeButton } = createGenreComponent(value);
         genreDisplay.appendChild(newElement);
         createRemoveEvent(newElement, closeButton);
-        item.classList.add('hidden');
         genreInput.value = '';
         genreInput.placeholder = 'Search or add genre...';
     };

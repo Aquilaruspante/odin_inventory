@@ -1,6 +1,9 @@
 function createRemoveEvent(element, button) {
     button.addEventListener('click', () => {
-        Array.from(toggleMenuItems).find(item => item.innerText === element.innerText).classList.remove('hidden');
+        const menuItem = Array.from(toggleMenuItems).find(item => item.innerText === element.innerText);
+        if (menuItem) {
+            menuItem.classList.remove('hidden');
+        };
         genreDisplay.removeChild(element);
     });
 };
