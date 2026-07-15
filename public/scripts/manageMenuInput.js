@@ -44,15 +44,16 @@ genreInput.addEventListener('keydown', (e) => {
             manageVisibleItems(item, e);
         });
     } else if (e.key === 'Tab' && noExistingGenreSelectFlag === true) {
-        addItem(genreInput.value, e);
-    }
-    hideTogglemenuIfItemsHidden();
+        addItem(genreInput.value.trim(), e);
+        toggleMenuItems.forEach(item => manageVisibleItems(item, e));
+    };
+    hideTogglemenuIfItemsHidden(e);
 });
 
 toggleMenuItems.forEach(item => {
     // Manage click selection
     item.addEventListener('mousedown', (e) => {
-        addItem(item.innerText, e);
+        addItem(item.innerText.trim(), e);
         item.classList.add('hidden');
         hideTogglemenuIfItemsHidden();
     });

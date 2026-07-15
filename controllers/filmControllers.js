@@ -13,8 +13,9 @@ exports.filmCreateGet = async function filmCreateGet (req, res) {
 
 exports.filmCreatePost = async function filmCreatePost (req, res) {
     const { title, year, director, image, genre } = req.body;
-    await db.filmCreate(title, year, director, image, genre);
-    res.redirect('/');
+    console.log(genre);
+    // await db.filmCreate(title, year, director, image, genre);
+    // res.redirect('/');
 };
 
 exports.filmUpdateGet = async function filmUpdateGet (req, res) {

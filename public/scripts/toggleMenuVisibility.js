@@ -15,12 +15,15 @@ function checkGenreDisplayForElement(item) {
     };
 };
 
-function hideTogglemenuIfItemsHidden() {
+function hideTogglemenuIfItemsHidden(e) {
     // hides menu if all items hidden
     if (Array.from(toggleMenuItems).every(item => item.classList.contains('hidden'))) { 
-        menu.classList.add('hidden'); 
         counter = 0;
-        addNewGenreLi.classList.remove('hidden');
+        if (genreInput.value !== '') { 
+            addNewGenreLi.classList.remove('hidden');
+        } else {
+            menu.classList.add('hidden');
+        };
         noExistingGenreSelectFlag = true;
     } else {
         menu.classList.remove('hidden');
@@ -57,6 +60,7 @@ function addItem(value, e) {
         createRemoveEvent(newElement, closeButton);
         genreInput.value = '';
         genreInput.placeholder = 'Search or add genre...';
+        createNewInput(value);
     };
 };
 
