@@ -67,4 +67,5 @@ genreInput.addEventListener('input', (e) => {
         counter = item.index + 1;
     };
     hideTogglemenuIfItemsHidden();
+    showAddNewGenreLi(e.target.value);
 });

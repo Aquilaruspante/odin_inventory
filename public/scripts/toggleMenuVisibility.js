@@ -3,6 +3,7 @@ const genreInput = document.querySelector('.genre-input');
 const toggleMenuItems = document.querySelectorAll('.genre-selection-element');
 const genreDisplay = document.querySelector('.genre-display');
 const genreDisplayPlaceholder = document.querySelector('.genre-display-placeholder');
+const addNewGenreLi = document.querySelector('.add-new-genre');
 
 let counter = 0;
 
@@ -17,8 +18,18 @@ function hideTogglemenuIfItemsHidden() {
     // hides menu if all items hidden
     if (Array.from(toggleMenuItems).every(item => item.classList.contains('hidden'))) { 
         menu.classList.add('hidden'); 
+        addNewGenreLi.classList.remove('hidden');
     } else {
         menu.classList.remove('hidden');
+        addNewGenreLi.classList.add('hidden');
+    };
+};
+
+function showAddNewGenreLi(text) {
+    if (text) {
+        menu.classList.remove('hidden');
+        
+        addNewGenreLi.innerHTML = `Press Tab/Enter to create <span class="new-genre-span">"${text}"</span> as a new genre...`
     };
 };
 

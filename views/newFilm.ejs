@@ -27,6 +27,7 @@
                 <input class="form-input genre-input" type="text" id="genre" name="genre" placeholder="Search or add genre..." />
             </div>
             <ul class="genre-selection-menu hidden">
+                <li class="add-new-genre hidden"></li>
                 <% for (const genre of genres) { %>
                     <li class="genre-selection-element"><%= genre.name %></li>
                 <% } %>
