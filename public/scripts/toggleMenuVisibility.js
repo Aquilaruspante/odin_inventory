@@ -54,7 +54,7 @@ function addItem(value, e) {
     // add item to the display
     if (!Array.from(genreDisplay.childNodes).find(element => element.innerText === value)) {
         e.preventDefault();
-        genreDisplayPlaceholder.classList.add('hidden');
+        if ( genreDisplayPlaceholder) genreDisplayPlaceholder.classList.add('hidden');
         const { newElement, closeButton } = createGenreComponent(value);
         genreDisplay.appendChild(newElement);
         createRemoveEvent(newElement, closeButton);

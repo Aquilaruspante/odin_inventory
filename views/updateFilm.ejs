@@ -1,6 +1,6 @@
 <%- include('./header.ejs'); %>
 
-<form class="form" action="/film/<%= film[0].id %>/update" method="POST">
+<form class="form" action="/film/<%= film[0].id %>/update" method="POST" autocomplete="off">
     <div id="form-header">
         <h2 class="oswald-title">Add Film</h2>
     </div>
@@ -67,7 +67,6 @@
 </main>
 <script src="/scripts/toggleMenuVisibility.js"></script>
 <script src="/scripts/manageMenuInput.js"></script>
-<script src="/scripts/genreDisplayComponent.js"></script>
 <script src="/scripts/removeGenre.js"></script>
 <script src="/scripts/createNewGenreInput.js"></script>
 </body>

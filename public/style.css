@@ -145,19 +145,26 @@ img {
 }
 
 .film-card {
-	height: 430px;
+	height: 470px;
+	max-width: 210px;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 }
 
 .film-details {
-	height: 60px;
+	height: 80px;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 	font-weight: 350;
 	padding: 3px;
+}
+
+.genre-list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 3px;
 }
 
 .film-title {
