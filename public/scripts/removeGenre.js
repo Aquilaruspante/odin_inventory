@@ -1,7 +1,6 @@
 
 
 function createRemoveEvent(element, button) {
-    console.log('click');
     button.addEventListener('click', () => {
         console.log(element.innerText);
         const menuItem = Array.from(toggleMenuItems).find(item => item.innerText === element.innerText);

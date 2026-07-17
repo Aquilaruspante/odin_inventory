@@ -1,6 +1,6 @@
 <%- include('./header.ejs'); %>
 
-<form class="form" action="/film/<%= film[0].id %>/update" method="POST" autocomplete="off">
+<form class="form" action="<%= `/film/${film[0].id}/update` %>" method="POST" autocomplete="off">
     <div id="form-header">
         <h2 class="oswald-title">Add Film</h2>
     </div>
@@ -60,7 +60,7 @@
             </div>
         </div>
         <input type="hidden" name="id" value="<%= film[0].id %>">
-        <button class="form-button">ADD</button>
+        <button class="form-button">UPDATE</button>
     </div>
     <% if (film[0].genres) { %>
         <% for (const genre of film[0].genres) { %>

@@ -9,7 +9,7 @@ router.get('/new', filmControllers.filmCreateGet);
 
 router.post('/new', filmControllers.filmCreatePost);
 
-router.get('/:id/update/', filmControllers.filmUpdateGet);
+router.get('/:id/update', filmControllers.filmUpdateGet);
 
 router.post('/:id/update', filmControllers.filmUpdatePost);
 
