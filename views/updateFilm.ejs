@@ -34,7 +34,7 @@
             </ul>
             <div class="genre-display">
                 <% if (film[0].genres) { %>
-                    <% for (genre of film[0].genres) { %>
+                    <% for (const genre of film[0].genres) { %>
                         <div class="genre-display-element">
                             <div><%= genre %></div><button type="button" class="close-button">
                                 <svg 
@@ -62,11 +62,16 @@
         <input type="hidden" name="id" value="<%= film[0].id %>">
         <button class="form-button">ADD</button>
     </div>
-    
+    <% if (film[0].genres) { %>
+        <% for (const genre of film[0].genres) { %>
+            <input type="hidden" name="genre[]" value="<%= genre %>">
+        <% } %>
+    <% } %>
 </form>
 </main>
 <script src="/scripts/toggleMenuVisibility.js"></script>
 <script src="/scripts/manageMenuInput.js"></script>
+<script src="/scripts/genreDisplayComponent.js"></script>
 <script src="/scripts/removeGenre.js"></script>
 <script src="/scripts/createNewGenreInput.js"></script>
 <script src="/scripts/closeButtonOnUpdate.js"></script>

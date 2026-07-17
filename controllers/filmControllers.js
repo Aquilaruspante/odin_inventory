@@ -20,7 +20,6 @@ exports.filmCreatePost = async function filmCreatePost (req, res) {
 exports.filmUpdateGet = async function filmUpdateGet (req, res) {
     const { id } = req.params;
     const film = await db.filmGet(id);
-    console.log(film[0].genres);
     const genres = await db.genresListGet();
     res.render('updateFilm', { film, genres });
 }
