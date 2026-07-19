@@ -184,7 +184,6 @@ img {
 	font-weight: 400;
 	font-size: 1.1rem;
 	color: rgb(63, 43, 7);
-	/*border: 1px solid rgb(255, 255, 255);*/
 	box-sizing: border-box;
 	padding: 3px;
 	width: 50%;
@@ -205,7 +204,6 @@ img {
 	background-color: var(--background-color);
 	width: 50%;
 	height: 100%;
-	/*border: 1px solid rgb(255, 255, 255);*/
 	font-weight: 400;
 	font-size: 1.1rem;
 	color: rgb(63, 43, 7);
@@ -378,4 +376,14 @@ img {
 	max-width: 1000px;
 	padding: 2px;
 	margin: auto;
+}
+
+.error-container {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	text-align: center;
+	gap: 50px;
+	font-size: 3rem;
+	margin-top: 100px;
 }

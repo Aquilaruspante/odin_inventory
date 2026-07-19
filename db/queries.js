@@ -43,7 +43,8 @@ exports.filmCreate = async function filmCreate (name, year, director, image, gen
         INSERT INTO relations (film_id, genre_id)
         SELECT new_film.id, all_genres.id
         FROM new_film, all_genres;
-        `, [name, year, director, image, genre])
+        `, [name, year, director, image, genre]
+    );
 };
 
 exports.filmGet = async function filmGet (id) {

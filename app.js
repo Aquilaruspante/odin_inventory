@@ -26,6 +26,14 @@ app.all('/{*splat}', (req, res) => {
     res.status(404).send('Page not found');
 });
 
+app.use((err, req, res, next) => {
+    console.log(err);
+    const status = err.status || 500;
+    status === 500 ? err.message = 'Internal server error!!!' : err.message;
+    
+    res.status(status).render('error', { status, err });
+});
+
 app.listen(process.env.PORT || 3000, (error) => {
     if (error) return console.log('Failed to start server!');
 

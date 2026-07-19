@@ -3,10 +3,10 @@ const { Client } = require('pg');
 const SQL = `
     CREATE TABLE IF NOT EXISTS films (
         id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
-        name VARCHAR (255) NOT NULL UNIQUE,
+        name VARCHAR (255) NOT NULL UNIQUE CHECK (trim(name) <> ''),
         year INT NOT NULL,
-        director VARCHAR (255),
-        image VARCHAR
+        director VARCHAR (255) CHECK (trim(director) <> ''),
+        image VARCHAR NOT NULL CHECK (trim(image) <> '')
     );
 
     INSERT INTO films (name, year, director, image)
@@ -18,7 +18,7 @@ const SQL = `
     
     CREATE TABLE IF NOT EXISTS genres (
         id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
-        name VARCHAR (255) UNIQUE
+        name VARCHAR (255) UNIQUE NOT NULL CHECK (trim(name) <> '')
     );
 
     INSERT INTO genres (name)
