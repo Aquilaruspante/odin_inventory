@@ -369,3 +369,12 @@ img {
 .new-genre-span {
 	font-weight: 400;
 }
+
+.message {
+	background-color: rgb(206, 139, 113);
+	color: rgb(65, 4, 4);
+	text-align: center;
+	max-width: 1000px;
+	padding: 2px;
+	margin: auto;
+}

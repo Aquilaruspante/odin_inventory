@@ -32,6 +32,11 @@ exports.filmUpdatePost = async function filmUpdatePost (req, res) {
 
 exports.filmDelete = async function filmDelete (req, res) {
     const { id } = req.params;
-    await db.filmDelete(id);
-    res.redirect('/');
+    const { password } = req.body;
+    if (password === process.env.ADMIN_PASSWORD) { 
+        await db.filmDelete(id);
+        res.json({ status: 'success', message: 'Record deleted!!!'});
+    } else {
+        res.json({ status: 'denied', message: 'Action denied!!!'});
+    };
 };

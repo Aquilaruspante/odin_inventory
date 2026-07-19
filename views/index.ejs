@@ -1,10 +1,9 @@
 <%- include('./header.ejs'); %>
 
-
     <% for (const film of films) { %>
         <div class="film-card">
             <h3 class="film-title oswald-card-title"><%= film.name %></h3>
-            <img src="<%= film.image %>" alt="">
+            <img src="<%= film.image %>" alt="<%= film.name %> image">
             <div class="film-details">
                 <p>Year: <%= film.year %></p>
                 <p>Director: <%= film.director %></p>
@@ -17,11 +16,11 @@
             </div>
             <div class="button-section">
                 <a class="bottom-card" href=<%= `/film/${film.id}/update` %>>Update</a>
-                <form class="delete-form bottom-card" action="<%= `/film/${film.id}/delete` %>" method="POST">
-                    <button class="delete-button oswald-text">Delete</button>
-                </form>
+                
+                <button type="button" class="delete-button oswald-text" data-id="<%= film.id %>">Delete</button>
             </div>
         </div>
     <% } %>
 </main>
+<script src="/scripts/deleteButton.js"></script>
 </body>

@@ -11,6 +11,12 @@ app.set('views', path.join(__dirname, 'views'));
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+// app.use((req, res, next) => {
+//     console.log('DEBUG', req.method, req.url, req.body);
+//     next();
+// });
 
 app.use('/film', filmRouter);
 
