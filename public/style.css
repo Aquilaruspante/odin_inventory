@@ -184,14 +184,14 @@ img {
 	font-weight: 400;
 	font-size: 1.1rem;
 	color: rgb(63, 43, 7);
-	border: 1px solid rgb(255, 255, 255);
+	/*border: 1px solid rgb(255, 255, 255);*/
 	box-sizing: border-box;
 	padding: 3px;
 	width: 50%;
 	text-align: center;
 	display: flex;
 	align-items: center;
-	justify-content: center;
+	justify-content: start;
 }
 
 .button-section a:hover {
@@ -203,15 +203,16 @@ img {
 	border: none;
 	outline: none;
 	background-color: var(--background-color);
-	width: 100%;
+	width: 50%;
 	height: 100%;
-	border: 1px solid rgb(255, 255, 255);
+	/*border: 1px solid rgb(255, 255, 255);*/
 	font-weight: 400;
 	font-size: 1.1rem;
 	color: rgb(63, 43, 7);
 	box-sizing: border-box;
 	padding: 3px;
-	text-align: center;
+	display: flex;
+	justify-content: end;
 }
 
 .delete-button:hover {
