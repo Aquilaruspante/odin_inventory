@@ -13,19 +13,19 @@
         <div id="form-body">
             <div class="form-section">
                 <label for="title">Title</label>
-                <input class="form-input" type="text" name="title" id="title" value="<% if (locals.film) { %><%= film[0].name %><% } %>">
+                <input class="form-input" type="text" name="title" id="title" value="<% if (locals.film) { %><%= film[0].name %><% } %>" required>
             </div>
             <div class="form-section">
                 <label for="year">Year</label>
-                <input class="form-input" type="number" name="year" id="year" value="<% if (locals.film) { %><%= film[0].year %><% } %>">
+                <input class="form-input" type="number" name="year" id="year" value="<% if (locals.film) { %><%= film[0].year %><% } %>" required>
             </div>
             <div class="form-section">
                 <label for="image">Image URL</label>
-                <input class="form-input" type="text" name="image" id="image" value="<% if (locals.film) { %><%= film[0].image %><% } %>">
+                <input class="form-input" type="URL" name="image" id="image" value="<% if (locals.film) { %><%= film[0].image %><% } %>" required>
             </div>
             <div class="form-section">
                 <label for="director">Director</label>
-                <input class="form-input" type="text" name="director" id="director" value="<% if (locals.film) { %><%= film[0].director %><% } %>">
+                <input class="form-input" type="text" name="director" id="director" value="<% if (locals.film) { %><%= film[0].director %><% } %>" required>
             </div>
             <div class="genre-input-section">
                 <div class="form-section">
