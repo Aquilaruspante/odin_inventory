@@ -1,43 +1,52 @@
 <%- include('./header.ejs'); %>
 
-<form class="form" action="/film/new" method="POST" autocomplete="off">
-    <div id="form-header">
-        <h2 class="oswald-title">Add Film</h2>
-    </div>
-    <div id="form-body">
-        <div class="form-section">
-            <label for="title">Title</label>
-            <input class="form-input" type="text" name="title" id="title">
+<div class="form-container">
+    <% if (errors.length) { %>
+        <% for (const error of errors) { %>
+            <p class="message"><%= error.msg %></p>
+        <% } %>
+        
+    <% } %>
+
+    <form class="form" action="/film/new" method="POST" autocomplete="off">
+        <div id="form-header">
+            <h2 class="oswald-title">Add Film</h2>
         </div>
-        <div class="form-section">
-            <label for="year">Year</label>
-            <input class="form-input" type="number" name="year" id="year">
-        </div>
-        <div class="form-section">
-            <label for="image">Image URL</label>
-            <input class="form-input" type="text" name="image" id="image">
-        </div>
-        <div class="form-section">
-            <label for="director">Director</label>
-            <input class="form-input" type="text" name="director" id="director">
-        </div>
-        <div class="genre-input-section">
+        <div id="form-body">
             <div class="form-section">
-                <label for="genre">Genre</label>
-                <input class="form-input genre-input" type="text" id="genre" placeholder="Search or add genre..." />
+                <label for="title">Title</label>
+                <input class="form-input" type="text" name="title" id="title">
             </div>
-            <ul class="genre-selection-menu hidden">
-                <li class="add-new-genre hidden"></li>
-                <% for (const genre of genres) { %>
-                    <li class="genre-selection-element"><%= genre.name %></li>
-                <% } %>
-            </ul>
-            <div class="genre-display"><p class="genre-display-placeholder">NO GENRE SELECTED</p></div>
+            <div class="form-section">
+                <label for="year">Year</label>
+                <input class="form-input" type="number" name="year" id="year">
+            </div>
+            <div class="form-section">
+                <label for="image">Image URL</label>
+                <input class="form-input" type="text" name="image" id="image">
+            </div>
+            <div class="form-section">
+                <label for="director">Director</label>
+                <input class="form-input" type="text" name="director" id="director">
+            </div>
+            <div class="genre-input-section">
+                <div class="form-section">
+                    <label for="genre">Genre</label>
+                    <input class="form-input genre-input" type="text" id="genre" placeholder="Search or add genre..." />
+                </div>
+                <ul class="genre-selection-menu hidden">
+                    <li class="add-new-genre hidden"></li>
+                    <% for (const genre of genres) { %>
+                        <li class="genre-selection-element"><%= genre.name %></li>
+                    <% } %>
+                </ul>
+                <div class="genre-display"><p class="genre-display-placeholder">NO GENRE SELECTED</p></div>
+            </div>
+            <button class="form-button">ADD</button>
         </div>
-        <button class="form-button">ADD</button>
-    </div>
-    
-</form>
+        
+    </form>
+</div>
 </main>
 <script src="/scripts/toggleMenuVisibility.js"></script>
 <script src="/scripts/manageMenuInput.js"></script>

@@ -373,9 +373,10 @@ img {
 	background-color: rgb(206, 139, 113);
 	color: rgb(65, 4, 4);
 	text-align: center;
-	max-width: 1000px;
+	width: 1000px;
 	padding: 2px;
 	margin: auto;
+	margin-bottom: 2px;
 }
 
 .error-container {
@@ -386,4 +387,11 @@ img {
 	gap: 50px;
 	font-size: 3rem;
 	margin-top: 100px;
+}
+
+.form-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
 }

@@ -1,73 +1,80 @@
 <%- include('./header.ejs'); %>
 
-<form class="form" action="<%= `/film/${film[0].id}/update` %>" method="POST" autocomplete="off">
-    <div id="form-header">
-        <h2 class="oswald-title">Add Film</h2>
-    </div>
-    <div id="form-body">
-        <div class="form-section">
-            <label for="title">Title</label>
-            <input class="form-input" type="text" name="title" id="title" value="<% if (locals.film) { %><%= film[0].name %><% } %>">
-        </div>
-        <div class="form-section">
-            <label for="year">Year</label>
-            <input class="form-input" type="number" name="year" id="year" value="<% if (locals.film) { %><%= film[0].year %><% } %>">
-        </div>
-        <div class="form-section">
-            <label for="image">Image URL</label>
-            <input class="form-input" type="text" name="image" id="image" value="<% if (locals.film) { %><%= film[0].image %><% } %>">
-        </div>
-        <div class="form-section">
-            <label for="director">Director</label>
-            <input class="form-input" type="text" name="director" id="director" value="<% if (locals.film) { %><%= film[0].director %><% } %>">
-        </div>
-        <div class="genre-input-section">
-            <div class="form-section">
-                <label for="genre">Genre</label>
-                <input class="form-input genre-input" type="text" id="genre" placeholder="Search or add genre..." />
-            </div>
-            <ul class="genre-selection-menu hidden">
-                <li class="add-new-genre hidden"></li>
-                <% for (const genre of genres) { %>
-                    <li class="genre-selection-element"><%= genre.name %></li>
-                <% } %>
-            </ul>
-            <div class="genre-display">
-                <% if (film[0].genres) { %>
-                    <% for (const genre of film[0].genres) { %>
-                        <div class="genre-display-element">
-                            <div><%= genre %></div><button type="button" class="close-button">
-                                <svg 
-                                    xmlns="http://www.w3.org/2000/svg" 
-                                    width="13" height="13" 
-                                    viewBox="0 0 24 24" 
-                                    fill="none" 
-                                    stroke="currentColor" 
-                                    stroke-width="2" 
-                                    stroke-linecap="round" 
-                                    stroke-linejoin="round" 
-                                    class="lucide lucide-x-icon lucide-x">
-                                    <path d="M18 6 6 18"/>
-                                    <path d="m6 6 12 12"/>
-                                </svg>    
-                            </button>
-                        </div>
-                    <% } %>
-                    
-                <% } else { %>
-                    <p class="genre-display-placeholder">NO GENRE SELECTED</p>
-                <% } %>
-            </div>
-        </div>
-        <input type="hidden" name="id" value="<%= film[0].id %>">
-        <button class="form-button">UPDATE</button>
-    </div>
-    <% if (film[0].genres) { %>
-        <% for (const genre of film[0].genres) { %>
-            <input type="hidden" name="genre[]" value="<%= genre %>">
+<div class="form-container">
+    <% if (errors.length) { %>
+        <% for (const error of errors) { %>
+            <p class="message"><%= error.msg %></p>
         <% } %>
     <% } %>
-</form>
+    <form class="form" action="<%= `/film/${film[0].id}/update` %>" method="POST" autocomplete="off">
+        <div id="form-header">
+            <h2 class="oswald-title">Add Film</h2>
+        </div>
+        <div id="form-body">
+            <div class="form-section">
+                <label for="title">Title</label>
+                <input class="form-input" type="text" name="title" id="title" value="<% if (locals.film) { %><%= film[0].name %><% } %>">
+            </div>
+            <div class="form-section">
+                <label for="year">Year</label>
+                <input class="form-input" type="number" name="year" id="year" value="<% if (locals.film) { %><%= film[0].year %><% } %>">
+            </div>
+            <div class="form-section">
+                <label for="image">Image URL</label>
+                <input class="form-input" type="text" name="image" id="image" value="<% if (locals.film) { %><%= film[0].image %><% } %>">
+            </div>
+            <div class="form-section">
+                <label for="director">Director</label>
+                <input class="form-input" type="text" name="director" id="director" value="<% if (locals.film) { %><%= film[0].director %><% } %>">
+            </div>
+            <div class="genre-input-section">
+                <div class="form-section">
+                    <label for="genre">Genre</label>
+                    <input class="form-input genre-input" type="text" id="genre" placeholder="Search or add genre..." />
+                </div>
+                <ul class="genre-selection-menu hidden">
+                    <li class="add-new-genre hidden"></li>
+                    <% for (const genre of genres) { %>
+                        <li class="genre-selection-element"><%= genre.name %></li>
+                    <% } %>
+                </ul>
+                <div class="genre-display">
+                    <% if (film[0].genres) { %>
+                        <% for (const genre of film[0].genres) { %>
+                            <div class="genre-display-element">
+                                <div><%= genre %></div><button type="button" class="close-button">
+                                    <svg 
+                                        xmlns="http://www.w3.org/2000/svg" 
+                                        width="13" height="13" 
+                                        viewBox="0 0 24 24" 
+                                        fill="none" 
+                                        stroke="currentColor" 
+                                        stroke-width="2" 
+                                        stroke-linecap="round" 
+                                        stroke-linejoin="round" 
+                                        class="lucide lucide-x-icon lucide-x">
+                                        <path d="M18 6 6 18"/>
+                                        <path d="m6 6 12 12"/>
+                                    </svg>    
+                                </button>
+                            </div>
+                        <% } %>
+                        
+                    <% } else { %>
+                        <p class="genre-display-placeholder">NO GENRE SELECTED</p>
+                    <% } %>
+                </div>
+            </div>
+            <input type="hidden" name="id" value="<%= film[0].id %>">
+            <button class="form-button">UPDATE</button>
+        </div>
+        <% if (film[0].genres) { %>
+            <% for (const genre of film[0].genres) { %>
+                <input type="hidden" name="genre[]" value="<%= genre %>">
+            <% } %>
+        <% } %>
+    </form>
+</div>
 </main>
 <script src="/scripts/toggleMenuVisibility.js"></script>
 <script src="/scripts/manageMenuInput.js"></script>

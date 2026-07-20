@@ -1,5 +1,6 @@
 const db = require('../db/queries');
 const genreCache = require('../db/genreCache');
+const { matchedData, validationResult } = require('express-validator');
 
 exports.filmListGet = async function filmListGet (req, res, next) {
     try {
@@ -12,17 +13,24 @@ exports.filmListGet = async function filmListGet (req, res, next) {
 
 exports.filmCreateGet = async function filmCreateGet (req, res) {
     const genres = await genreCache.getData();
-    res.render('newFilm', { genres });
+    res.render('newFilm', { genres, errors: [] });
 };
 
 exports.filmCreatePost = async function filmCreatePost (req, res, next) {
-    const { title, year, director, image, genre } = req.body;
-    try {
-        await db.filmCreate(title, year, director, image, genre);
-        res.redirect('/');
-    } catch (error) {  
-        next(error);
+    const result = validationResult(req);
+
+    if (result.isEmpty()) {
+        console.log('here');
+        try {
+            const { title, year, director, image, genre } = matchedData(req);
+            await db.filmCreate(title, year, director, image, genre);
+            return res.redirect('/');
+        } catch (error) {  
+            next(error);
+        };
     };
+    const genres = await genreCache.getData();
+    res.render('newFilm', { errors: result.array(), genres });
 };
 
 exports.filmUpdateGet = async function filmUpdateGet (req, res, next) {
@@ -30,20 +38,28 @@ exports.filmUpdateGet = async function filmUpdateGet (req, res, next) {
     try {
         const film = await db.filmGet(id);
         const genres = await db.genresListGet();
-        res.render('updateFilm', { film, genres });
+        res.render('updateFilm', { film, genres, errors: [] });
     } catch (error) {
         next(error);
     };
 };
 
 exports.filmUpdatePost = async function filmUpdatePost (req, res, next) {
-    const { id, title, year, image, director, genre } = req.body;
-    try {
-        await db.filmUpdate(id, title, year, image, director, genre);
-        res.redirect('/');
-    } catch (error) {
-        next(error);
-    };
+    const result = validationResult(req);
+    const { id } = req.body;
+
+    if (result.isEmpty()) {
+        const { title, year, image, director, genre } = matchedData(req);
+        try {
+            await db.filmUpdate(id, title, year, image, director, genre);
+            return res.redirect('/');
+        } catch (error) {
+            next(error);
+        };
+    }
+    const film = await db.filmGet(id);
+    const genres = await db.genresListGet();
+    res.render('updateFilm', { errors: result.array(), film, genres});
 };
 
 exports.filmDelete = async function filmDelete (req, res, next) {
