@@ -20,12 +20,15 @@ exports.filmCreatePost = async function filmCreatePost (req, res, next) {
     const result = validationResult(req);
 
     if (result.isEmpty()) {
-        console.log('here');
         try {
             const { title, year, director, image, genre } = matchedData(req);
             await db.filmCreate(title, year, director, image, genre);
             return res.redirect('/');
         } catch (error) {  
+            if (error.code === '23505') {
+                const genres = await genreCache.getData();
+                return res.status(400).render('newFilm', { genres, errors: [{ msg: 'A film with this title already in database!' }]});
+            };
             next(error);
         };
     };
@@ -54,11 +57,17 @@ exports.filmUpdatePost = async function filmUpdatePost (req, res, next) {
             await db.filmUpdate(id, title, year, image, director, genre);
             return res.redirect('/');
         } catch (error) {
+            if (error.code === '23505') {
+                const film = await db.filmGet(id);
+                console.log('film', film);
+                const genres = await genreCache.getData();
+                return res.render('updateFilm', { errors: { msg: 'A film with this title already in database', film, genres }});
+            }
             next(error);
         };
     }
     const film = await db.filmGet(id);
-    const genres = await db.genresListGet();
+    const genres = await genreCache.getData();
     res.render('updateFilm', { errors: result.array(), film, genres});
 };
 
