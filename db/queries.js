@@ -116,6 +116,19 @@ exports.getFilmIdByName = async function getFilmIdByName(name) {
 /* ---------------------------------------------------------GENRES-------------------*/
 
 exports.genresListGet = async function genresListGet() {
-    const genres = genreCache.getData();
+    const genres = await genreCache.getData();
     return genres;
+};
+
+exports.filmsListByGenreGet = async function filmsListByGenreGet() {
+    const { rows } = await pool.query(`
+            SELECT g.name AS genre,
+                json_agg(json_build_object('name', f.name, 'image', f.image)) 
+                    FILTER (WHERE f.name IS NOT NULL) AS films
+            FROM genres g
+            LEFT JOIN relations r ON g.id = r.genre_id
+            LEFT JOIN films f ON r.film_id = f.id
+            GROUP BY g.name;
+        `);
+    return rows;
 };

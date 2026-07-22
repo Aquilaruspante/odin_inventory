@@ -1,7 +1,9 @@
-const { Router } = requrie('express');
+const { Router } = require('express');
+
+const genreControllers = require('../controllers/genreControllers');
 
 const router = new Router({ mergeParams: true });
 
-router('/', genreControllers.genreListGet);
+router.get('/', genreControllers.genreListGet);
 
 module.exports = router;

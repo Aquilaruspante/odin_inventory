@@ -1,2 +1,12 @@
 <%- include('./header.ejs'); %>
 
+<% for (const genre of genres) { %>
+    <div class="genre-card">
+        <div class="genre-title"><%= genre.genre %></div>
+        <% const films = genre.films %>
+        <% for (let film of films) { %>
+            <img src="<%= film.image %>" alt="<%= film.name %> image">
+            <p class="film-descriptor"><%= film.name %></p>
+        <% } %>
+    </div>
+<% } %>
