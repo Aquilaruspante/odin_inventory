@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('node:path');
 
 const filmRouter = require('./routes/filmRoute');
+const genreRouter = require('./routes/genreRoute');
 const filmControllers = require('./controllers/filmControllers');
 
 const app = express();
@@ -19,6 +20,7 @@ app.use(express.json());
 // });
 
 app.use('/film', filmRouter);
+app.use('/genre', genreRouter);
 
 app.get('/', filmControllers.filmListGet);
 
