@@ -12,7 +12,7 @@ exports.filmListGet = async function filmListGet (req, res, next) {
 };
 
 exports.filmCreateGet = async function filmCreateGet (req, res) {
-    const genres = await genreCache.getData();
+    const genres = await db.genresListGet();
     res.render('newFilm', { genres, errors: [] });
 };
 
@@ -60,7 +60,7 @@ exports.filmUpdatePost = async function filmUpdatePost (req, res, next) {
             if (error.code === '23505') {
                 const film = await db.filmGet(id);
                 console.log('film', film);
-                const genres = await genreCache.getData();
+                const genres = await db.genresListGet();
                 return res.render('updateFilm', { errors: { msg: 'A film with this title already in database', film, genres }});
             }
             next(error);

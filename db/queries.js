@@ -1,4 +1,5 @@
 const pool = require('./pool');
+const genreCache = require('./genreCache');
 
 /* ---------------------------------- FILMS -------------------------------------*/ 
 
@@ -115,6 +116,6 @@ exports.getFilmIdByName = async function getFilmIdByName(name) {
 /* ---------------------------------------------------------GENRES-------------------*/
 
 exports.genresListGet = async function genresListGet() {
-    const { rows } = await pool.query('SELECT * FROM genres;');
-    return rows;
+    const genres = genreCache.getData();
+    return genres;
 };
