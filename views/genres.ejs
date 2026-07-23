@@ -2,11 +2,16 @@
 
 <% for (const genre of genres) { %>
     <div class="genre-card">
-        <div class="genre-title"><%= genre.genre %></div>
+        <div class="genre-title oswald-card-title"><%= genre.genre %></div>
         <% const films = genre.films %>
-        <% for (let film of films) { %>
-            <img src="<%= film.image %>" alt="<%= film.name %> image">
-            <p class="film-descriptor"><%= film.name %></p>
-        <% } %>
+        <div class="film-list">
+            <% for (let film of films) { %>
+                <div class="film-section">
+                    <img class="film-thumbnail" src="<%= film.image %>" alt="<%= film.title %> image">
+                    <p class="film-descriptor"><%= film.name %></p> 
+                </div>
+                   
+            <% } %>
+        </div>
     </div>
 <% } %>

@@ -395,3 +395,59 @@ img {
 	align-items: center;
 	width: 100%;
 }
+
+.genre-card {
+	width: 200px;
+	height: 200px;
+	border: 3px solid var(--secondary-color);
+	border-radius: 10px;
+}
+
+.genre-title {
+	height: 50px;
+	font-size: 2rem;
+	border-bottom: solid 1px var(--secondary-color);
+	box-sizing: border-box;
+	padding: 8px;
+	text-align: center;
+}
+
+.film-list {
+	height: 150px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	font-size: 1.2rem;
+	overflow-y: scroll;
+	-ms-overflow-style: none;  /* IE and Edge */
+  	scrollbar-width: none;  /* Firefox */
+}
+
+.film-list:hover {
+	scrollbar-width: thin;
+	-ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+.film-list::-webkit-scrollbar {
+	background-color: var(--secondary-color);
+  display: none;  /* Chrome */
+}
+
+.film-list:hover::-webkit-scrollbar {
+  width: 1px;  /* Chrome */
+  transition: 0.9s;
+}
+
+.film-section {
+	display: flex;
+	justify-content: space-between;
+	box-sizing: border-box;
+	padding: 3px 5px;
+}
+
+.film-thumbnail {
+	object-fit: cover;
+	object-position: 25% 25%;
+	width: 25px;
+	height: 25px;
+}
