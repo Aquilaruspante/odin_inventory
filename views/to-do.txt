@@ -1,0 +1,5 @@
+single-film-card
+searchbar
+better styling
+media queries
+different color on form for non existing genres
