@@ -86,3 +86,10 @@ exports.filmDelete = async function filmDelete (req, res, next) {
         res.status(401).json({ status: 'denied', message: 'Action denied!!!'});
     };
 };
+
+exports.filmRead = async function filmRead(req, res, next) {
+    const { id } = req.params;
+    const filmArray = await db.filmGet(id);
+    const film = filmArray[0];
+    res.render('film', { film });
+};

@@ -29,4 +29,6 @@ router.post('/:id/update', formValidator, filmControllers.filmUpdatePost);
 
 router.post('/:id/delete', filmControllers.filmDelete);
 
+router.get('/:id', filmControllers.filmRead);
+
 module.exports = router;
