@@ -123,7 +123,7 @@ exports.genresListGet = async function genresListGet() {
 exports.filmsListByGenreGet = async function filmsListByGenreGet() {
     const { rows } = await pool.query(`
             SELECT g.name AS genre,
-                json_agg(json_build_object('name', f.name, 'image', f.image)) 
+                json_agg(json_build_object('name', f.name, 'image', f.image, 'id', f.id)) 
                     FILTER (WHERE f.name IS NOT NULL) AS films
             FROM genres g
             LEFT JOIN relations r ON g.id = r.genre_id

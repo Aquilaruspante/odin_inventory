@@ -399,8 +399,6 @@ img {
 .genre-card {
 	width: 200px;
 	height: 200px;
-	border: 3px solid var(--secondary-color);
-	border-radius: 10px;
 }
 
 .genre-title {
@@ -450,4 +448,9 @@ img {
 	object-position: 25% 25%;
 	width: 25px;
 	height: 25px;
+}
+
+.film-descriptor {
+	text-decoration: none;
+	color: var(--text-color);
 }

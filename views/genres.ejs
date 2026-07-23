@@ -8,7 +8,7 @@
             <% for (let film of films) { %>
                 <div class="film-section">
                     <img class="film-thumbnail" src="<%= film.image %>" alt="<%= film.title %> image">
-                    <p class="film-descriptor"><%= film.name %></p> 
+                    <a href="/film/<%= film.id %>" class="film-descriptor"><%= film.name %></a> 
                 </div>
                    
             <% } %>
