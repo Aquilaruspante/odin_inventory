@@ -190,7 +190,7 @@ img {
 	text-align: center;
 	display: flex;
 	align-items: center;
-	justify-content: start;
+	justify-content: center;
 }
 
 .button-section a:hover {
@@ -453,4 +453,49 @@ img {
 .film-descriptor {
 	text-decoration: none;
 	color: var(--text-color);
+}
+
+.single-film-card {
+	width: 700px;
+	display: flex;
+	border: 1px solid var(--secondary-color);
+	border-radius: 5px;
+	margin: auto;
+}
+
+.single-film-image {
+	width: 200px;
+}
+
+.single-film-details {
+	width: 500px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.single-film-title {
+	font-size: 2rem;
+}
+
+.single-film-element {
+	font-size: 1.5rem;
+}
+
+.single-film-button {
+	font-size: 1.3rem;
+	display: flex;
+	justify-content: center;
+}
+
+.single-film-button-section {
+	width: 100%;
+	justify-content: space-evenly;
+}
+
+.single-genres {
+	display: flex;
+	gap: 10px;
+	flex-wrap: wrap;
 }

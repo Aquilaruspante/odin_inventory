@@ -1,5 +1,23 @@
 <%- include('./header.ejs') %>
 
 <div class="single-film-card">
-    <div class="title"><%= film.name %></div>
+    <img class="single-film-image" src="<%= film.image %>" alt="<%= film.image %> image">
+    <div class="single-film-details">
+        <div class="single-film-title oswald-card-title"><%= film.name %></div>
+        <div class="dingle-film-element">Year: <%= film.year %></div>
+        <div class="single-film-element">Director: <%= film.director %></div>
+        <div class="single-film-element single-genres"> 
+            <div>Genres: </div>
+            <% for (const genre of film.genres) { %>
+                <div><%= genre %>  </div>
+            <% } %>
+        </div> 
+        <div class="single-film-button-section button-section">
+            <a class="single-film-button" href="/film/<%= film.id %>/update">Update</a>
+            <a class="single-film-button" href="/film/<%= film.id %>/delete">Delete</a>
+        </div>
+    </div>
+    
 </div>
+</main>
+</body>
