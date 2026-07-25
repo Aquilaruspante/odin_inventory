@@ -2,9 +2,14 @@
 
     <% for (const film of films) { %>
         <div class="film-card">
-            <h3 class="film-title oswald-card-title"><%= film.name %></h3>
-            <img src="<%= film.image %>" alt="<%= film.name %> image">    
-            <p>Year: <%= film.year %></p>
+            <a class="film-image-container" href="/film/<%= film.id %>"><img src="<%= film.image %>" alt="<%= film.name %> image"></a>    
+            <h3 class="film-title oswald-card-title"><a href="/film/<%= film.id %>"><%= film.name %></a></h3>
+            <p class="genre-list">
+                <a href="/genre?q=<%= film.genres[0] %>"><%= film.genres[0] %></a>
+                <% for (let i = 1; i < film.genres.length; i++) { %>
+                    - <a href="/genre?q=<%= film.genres[i] %>"><%= film.genres[i] %></a>
+                <% } %>
+            </p>
         </div>
     <% } %>
 </main>

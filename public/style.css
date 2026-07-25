@@ -139,39 +139,38 @@ main {
 }
 
 img {
-	height: 300px;
-	width: 203px;
+	height: 230px;
+	width: 150px;
 	overflow: hidden;
+	border-radius: 5px;
 }
 
 .film-card {
-	height: 470px;
-	max-width: 210px;
+	height: 250px;
+	max-width: 200px;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+	gap: 5px;
 }
 
-.film-details {
-	height: 80px;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	font-weight: 350;
-	padding: 3px;
+.film-image-container {
+	height: 230px;
+	width: 150px;
 }
 
-.genre-list {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 3px;
+.film-title a {
+	text-decoration: none;
+	color: var(--text-color);
 }
 
-.film-title {
-	font-size: 1.3rem;
-	text-align: center;
-	box-sizing: border-box;
-	padding: 3px;
+.film-title a:hover {
+	text-decoration: underline;
+	transition: 0.4s;
+}
+
+.genre-list a {
+	color: var(--text-color);
 }
 
 .button-section {
