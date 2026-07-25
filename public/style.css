@@ -182,7 +182,7 @@ img {
 .button-section a {
 	text-decoration: none;
 	font-weight: 400;
-	font-size: 1.1rem;
+	font-size: 1.3rem;
 	color: rgb(63, 43, 7);
 	box-sizing: border-box;
 	padding: 3px;
@@ -202,10 +202,9 @@ img {
 	border: none;
 	outline: none;
 	background-color: var(--background-color);
-	width: 50%;
+	width: 100%;
 	height: 100%;
 	font-weight: 400;
-	font-size: 1.1rem;
 	color: rgb(63, 43, 7);
 	box-sizing: border-box;
 	padding: 3px;

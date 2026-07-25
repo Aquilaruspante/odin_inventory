@@ -14,8 +14,8 @@
         </div> 
         <div class="single-film-button-section button-section">
             <a class="single-film-button" href="/film/<%= film.id %>/update">Update</a>
-            <form action="/film/<%= film.id %>/delete" method="POST">
-                <button type="button" class="delete-button" data-id="<%= film.id %>">Delete</button>
+            <form action="/film/<%= film.id %>/delete" method="POST" class="delete-form">
+                <button type="button" class="delete-button single-film-button oswald-text" data-id="<%= film.id %>">Delete</button>
             </form>
         </div>
     </div>
