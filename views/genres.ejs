@@ -1,17 +1,19 @@
 <%- include('./header.ejs'); %>
 
-<% for (const genre of genres) { %>
-    <div class="genre-card">
-        <div class="genre-title oswald-card-title"><%= genre.genre %></div>
-        <% const films = genre.films %>
-        <div class="film-list">
-            <% for (let film of films) { %>
-                <div class="film-section">
-                    <img class="film-thumbnail" src="<%= film.image %>" alt="<%= film.title %> image">
-                    <a href="/film/<%= film.id %>" class="film-descriptor"><%= film.name %></a> 
-                </div>
-                   
-            <% } %>
+<div class="genres-container">
+    <% for (const genre of genres) { %>
+        <div class="genre-card">
+            <div class="genre-title oswald-card-title"><div><%= genre.genre %></div><div># <%= genre.films.length %></div></div>
+            <% const films = genre.films %>
+            <div class="film-list">
+                <% for (let film of films) { %>
+                    <div class="film-section">
+                        <img class="film-thumbnail" src="<%= film.image %>" alt="<%= film.title %> image">
+                        <a href="/film/<%= film.id %>" class="film-descriptor"><%= film.name %></a> 
+                    </div>
+                    
+                <% } %>
+            </div>
         </div>
-    </div>
-<% } %>
+    <% } %>
+</div>

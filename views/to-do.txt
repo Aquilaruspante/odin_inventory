@@ -1,4 +1,4 @@
-single-film-card
+
 searchbar
 better styling
 media queries
