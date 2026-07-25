@@ -3,24 +3,9 @@
     <% for (const film of films) { %>
         <div class="film-card">
             <h3 class="film-title oswald-card-title"><%= film.name %></h3>
-            <img src="<%= film.image %>" alt="<%= film.name %> image">
-            <div class="film-details">
-                <p>Year: <%= film.year %></p>
-                <p>Director: <%= film.director %></p>
-                <div class="genre-list"> 
-                    <div>Genre: </div>
-                    <% for (const genre of film.genres) { %>
-                        <div><%= genre %>  </div>
-                    <% } %>
-                </div> 
-            </div>
-            <div class="button-section">
-                <a class="bottom-card" href=<%= `/film/${film.id}/update` %>>Update</a>
-                
-                <button type="button" class="delete-button oswald-text" data-id="<%= film.id %>">Delete</button>
-            </div>
+            <img src="<%= film.image %>" alt="<%= film.name %> image">    
+            <p>Year: <%= film.year %></p>
         </div>
     <% } %>
 </main>
-<script src="/scripts/deleteButton.js"></script>
 </body>

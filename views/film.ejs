@@ -14,10 +14,13 @@
         </div> 
         <div class="single-film-button-section button-section">
             <a class="single-film-button" href="/film/<%= film.id %>/update">Update</a>
-            <a class="single-film-button" href="/film/<%= film.id %>/delete">Delete</a>
+            <form action="/film/<%= film.id %>/delete" method="POST">
+                <button type="button" class="delete-button" data-id="<%= film.id %>">Delete</button>
+            </form>
         </div>
     </div>
     
 </div>
 </main>
+<script src="/scripts/deleteButton.js"></script>
 </body>
