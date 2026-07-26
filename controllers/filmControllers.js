@@ -24,6 +24,7 @@ exports.filmCreatePost = async function filmCreatePost (req, res, next) {
         try {
             const { title, year, director, image, genre } = matchedData(req);
             await db.filmCreate(title, year, director, image, genre);
+            genreCache.invalidateCache();
             return res.redirect('/');
         } catch (error) {  
             if (error.code === '23505') {
