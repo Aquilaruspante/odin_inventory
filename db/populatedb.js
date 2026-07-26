@@ -11,9 +11,15 @@ const SQL = `
 
     INSERT INTO films (name, year, director, image)
         VALUES
-            ('Save Private Ryan', 1998, 'Steven Spielberg', 'https://upload.wikimedia.org/wikipedia/en/a/ac/Saving_Private_Ryan_poster.jpg'),
+            ('Saving Private Ryan', 1998, 'Steven Spielberg', 'https://upload.wikimedia.org/wikipedia/en/a/ac/Saving_Private_Ryan_poster.jpg'),
             ('The Witch', 2016, 'Robert Eggers', 'https://upload.wikimedia.org/wikipedia/en/b/bf/The_Witch_poster.png'),
-            ('Idiocracy', 2006, 'Mike Judge', 'https://upload.wikimedia.org/wikipedia/en/6/6b/Idiocracy_movie_poster.jpg');
+            ('Idiocracy', 2006, 'Mike Judge', 'https://upload.wikimedia.org/wikipedia/en/6/6b/Idiocracy_movie_poster.jpg'),
+            ('300', 2007, 'Zack Snyder', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZo1d19MgYmsgoNGy2WdT_IOxWquppJ25p-uZyF5SdGA&s=10'),
+            ('Interstellar', 2014, 'Christopher Nolan', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSK__lNkFiWtsmI8U3cOYxEew7LJCqkviBQ7TILCEyosciS3cB4Mae9eqA8G_Y1TBOC5zK4akY-MlMAP1DHELUcD7GtqmEBhwHb1qLGhpIYkA&s=10'),
+            ('Dune', 2021, 'Denis Villeneuve', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZaeWiQtOFwUytMX5YoHTRKg93A131t6mmU8rI9-wbWvCGG_N72ZemVbLLNCzfBvPUfCuHNqz1uIv5uYxdgx7KCeU7jo-HcJ7ggq8iVUDpLg&s=10'),
+            ('Ace Ventura: When nature calls', 1994, 'Tom Shadyac', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4dj-6EtXgtDGkUUW0HaspN1g-H2XWImT4qLeWkWeqIg&s=10'),
+            ('Hereditary', 2018, 'Ari Aster', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7XzdY6rS1wRVm1pwELh2D034n0NYD38QY0WuW6DP7eg&s=10'),
+            ('American Pie', 1999, 'Paul Weitz', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRT2-As6E_KerQSWw50waUMNoA2bSaS_XS-b5_PrIVKQfIBoTK4x_DnfqRFcXGzHMpQKIXhddkeHsiXTFi9pTnpv8fWNR3El9dK9O3tMxrG2g&s=10');
 
     
     CREATE TABLE IF NOT EXISTS genres (
@@ -25,7 +31,12 @@ const SQL = `
         VALUES 
             ('drama'),
             ('horror'),
-            ('comedy');
+            ('comedy'),
+            ('warfare'),
+            ('historical'),
+            ('action'),
+            ('sci-fi'),
+            ('adventure');
 
 
     CREATE TABLE IF NOT EXISTS relations (
@@ -39,8 +50,27 @@ const SQL = `
     INSERT INTO relations (film_id, genre_id)
         VALUES 
             (1, 1),
+            (1, 4),
+            (1, 5),
+            (1, 6),
             (2, 2),
-            (3, 3);
+            (2, 1),
+            (2, 5),
+            (3, 3),
+            (4, 1),
+            (4, 4),
+            (4, 5),
+            (4, 6),
+            (5, 1),
+            (5, 6),
+            (5, 7),
+            (6, 7),
+            (6, 8),
+            (7, 3),
+            (7, 8),
+            (8, 1),
+            (8, 2),
+            (9, 3);
 `;
 
 async function main() {

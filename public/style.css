@@ -152,7 +152,7 @@ img {
 
 .film-card {
 	height: 250px;
-	max-width: 200px;
+	max-width: 150px;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -172,6 +172,14 @@ img {
 .film-title a:hover {
 	text-decoration: underline;
 	transition: 0.4s;
+}
+
+.genre-list {
+	max-width: 150px;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 2px;
+	height: 32px;
 }
 
 .genre-list a {
