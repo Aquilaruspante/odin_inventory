@@ -85,6 +85,8 @@ body {
 	height: 100vh;
 	background-color: var(--background-color);
 	color: var(--text-color);
+	position: relative;
+	z-index: 0;
 }
 
 header {
@@ -536,6 +538,7 @@ img {
 	border: 1px solid var(--secondary-color);
 	border-radius: 5px;
 	font-size: 0.9rem;
+	z-index: 0;
 }
 
 .genre-search-bar:focus {
@@ -616,4 +619,41 @@ img {
 	.genres-card {
 		padding: 8px;
 	}
+}
+
+.side-menu {
+	position: absolute;
+	width: 300px;
+	background-color: var(--secondary-color);
+	transform: translate(-100%);
+	transition: transform 0.7s ease-in-out;
+	height: 100%;
+	color: var(--secondary-negative-color);
+	z-index: 5;
+}
+
+.side-element {
+	height: 32px;
+	font-size: 1.5rem;
+	width: 80%;
+	padding: 16px;
+}
+
+.side-first-line {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-right: 8px;
+}
+
+.visible {
+	transform: translate(0%);
+}
+
+.side-menu-close:hover {
+	cursor: pointer;
+}
+
+.menu-icon:hover {
+	cursor: pointer;
 }
