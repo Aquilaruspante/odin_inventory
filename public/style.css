@@ -630,6 +630,8 @@ img {
 	height: 100%;
 	color: var(--secondary-negative-color);
 	z-index: 5;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px ;
 }
 
 .side-element {
@@ -637,6 +639,11 @@ img {
 	font-size: 1.5rem;
 	width: 80%;
 	padding: 16px;
+}
+
+.side-element a {
+	text-decoration: none;
+	color: var(--secondary-negative-color);
 }
 
 .side-first-line {
