@@ -354,6 +354,17 @@ img {
 	align-items: center;
 }
 
+.new-element {
+	background-color: var(--secondary-negative-color);
+	color: var(--secondary-color);
+	border: 1px solid var(--secondary-color);
+}
+
+.new-element .close-button {
+	background-color: var(--secondary-negative-color);
+	color: var(--secondary-color);
+}
+
 .hidden {
 	display: none;
 }

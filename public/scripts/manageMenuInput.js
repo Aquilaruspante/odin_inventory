@@ -38,13 +38,13 @@ genreInput.addEventListener('keydown', (e) => {
     if (e.key === 'Tab' && counter !== 0) {
         toggleMenuItems.forEach((item, index) => {
             if (index + 1 === counter) {
-                addItem(item.innerText, e);
+                addItem(item.innerText, e, false);
                 item.classList.add('hidden');
             };
             manageVisibleItems(item, e);
         });
     } else if (e.key === 'Tab' && noExistingGenreSelectFlag === true) {
-        addItem(genreInput.value.trim(), e);
+        addItem(genreInput.value.trim(), e, true);
         toggleMenuItems.forEach(item => manageVisibleItems(item, e));
     };
     hideTogglemenuIfItemsHidden(e);

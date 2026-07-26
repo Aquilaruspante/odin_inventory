@@ -50,12 +50,12 @@ function manageVisibleItems(item, e) {
     };
 };
 
-function addItem(value, e) {
+function addItem(value, e, isNew) {
     // add item to the display
     if (!Array.from(genreDisplay.childNodes).find(element => element.innerText === value)) {
         e.preventDefault();
         if ( genreDisplayPlaceholder) genreDisplayPlaceholder.classList.add('hidden');
-        const { newElement, closeButton } = createGenreComponent(value);
+        const { newElement, closeButton } = createGenreComponent(value, isNew);
         genreDisplay.appendChild(newElement);
         createRemoveEvent(newElement, closeButton);
         genreInput.value = '';

@@ -14,7 +14,7 @@ const closeButtonSVG = `
     </svg>    
 `
 
-function createGenreComponent(value) {
+function createGenreComponent(value, isNew) {
     // create display genre button
     const newElement = document.createElement('div');
     const newTextElement = document.createElement('div');
@@ -24,6 +24,7 @@ function createGenreComponent(value) {
     newElement.appendChild(closeButton);
 
     newElement.classList.add('genre-display-element');
+    if (isNew) newElement.classList.add('new-element');
     closeButton.classList.add('close-button');
     newTextElement.innerText = value;
     closeButton.innerHTML = closeButtonSVG;
