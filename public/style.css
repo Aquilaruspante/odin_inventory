@@ -97,6 +97,7 @@ header {
 	max-width: 1000px;
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 	height: 100%;
 }
 
@@ -572,6 +573,12 @@ img {
 	}
 
 	nav {
+		display: none;
+	}
+}
+
+@media (min-width: 890px) {
+	.lucide-menu {
 		display: none;
 	}
 }
