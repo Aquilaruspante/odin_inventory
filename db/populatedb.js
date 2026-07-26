@@ -19,8 +19,9 @@ const SQL = `
             ('Dune', 2021, 'Denis Villeneuve', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZaeWiQtOFwUytMX5YoHTRKg93A131t6mmU8rI9-wbWvCGG_N72ZemVbLLNCzfBvPUfCuHNqz1uIv5uYxdgx7KCeU7jo-HcJ7ggq8iVUDpLg&s=10'),
             ('Ace Ventura: When nature calls', 1994, 'Tom Shadyac', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4dj-6EtXgtDGkUUW0HaspN1g-H2XWImT4qLeWkWeqIg&s=10'),
             ('Hereditary', 2018, 'Ari Aster', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7XzdY6rS1wRVm1pwELh2D034n0NYD38QY0WuW6DP7eg&s=10'),
-            ('American Pie', 1999, 'Paul Weitz', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRT2-As6E_KerQSWw50waUMNoA2bSaS_XS-b5_PrIVKQfIBoTK4x_DnfqRFcXGzHMpQKIXhddkeHsiXTFi9pTnpv8fWNR3El9dK9O3tMxrG2g&s=10');
-
+            ('American Pie', 1999, 'Paul Weitz', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRT2-As6E_KerQSWw50waUMNoA2bSaS_XS-b5_PrIVKQfIBoTK4x_DnfqRFcXGzHMpQKIXhddkeHsiXTFi9pTnpv8fWNR3El9dK9O3tMxrG2g&s=10'),
+            ('Midsommar', 2019, 'Ari Aster', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHcJEtTaJ3-lCQtlJiYYijOG6z-ZkU7Q65M1eRt17qqJWLVEMmegkQnTreMVQvXzx4N0Ks-aBXSQr9-18h5cZZypHSGriZ6GWpO-ZR3WRJ&s=10');
+            
     
     CREATE TABLE IF NOT EXISTS genres (
         id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
@@ -70,7 +71,9 @@ const SQL = `
             (7, 8),
             (8, 1),
             (8, 2),
-            (9, 3);
+            (9, 3),
+            (10, 2),
+            (10, 1);
 `;
 
 async function main() {
