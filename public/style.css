@@ -346,6 +346,12 @@ img {
 	align-items: center;
 }
 
+.genre-display-legend {
+	color: var(--secondary-color);
+	font-size: 0.9rem;
+	text-align: center;
+}
+
 .genre-display-placeholder {
 	width: 100%;
 	color: rgb(189, 185, 174);

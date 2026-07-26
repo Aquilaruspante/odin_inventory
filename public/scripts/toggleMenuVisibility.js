@@ -4,6 +4,7 @@ const toggleMenuItems = document.querySelectorAll('.genre-selection-element');
 const genreDisplay = document.querySelector('.genre-display');
 const genreDisplayPlaceholder = document.querySelector('.genre-display-placeholder');
 const addNewGenreLi = document.querySelector('.add-new-genre');
+const genreDisplayLegend = document.querySelector('.genre-display-legend');
 
 let counter = 0;
 let noExistingGenreSelectFlag = false;
@@ -54,7 +55,10 @@ function addItem(value, e, isNew) {
     // add item to the display
     if (!Array.from(genreDisplay.childNodes).find(element => element.innerText === value)) {
         e.preventDefault();
-        if ( genreDisplayPlaceholder) genreDisplayPlaceholder.classList.add('hidden');
+        if ( genreDisplayPlaceholder) { 
+            genreDisplayPlaceholder.classList.add('hidden');
+            genreDisplayLegend.classList.remove('hidden');
+        };
         const { newElement, closeButton } = createGenreComponent(value, isNew);
         genreDisplay.appendChild(newElement);
         createRemoveEvent(newElement, closeButton);
