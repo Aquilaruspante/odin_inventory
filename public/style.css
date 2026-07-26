@@ -133,6 +133,11 @@ main {
 	margin: auto;
 	box-sizing: border-box;
 	padding-top: 50px;
+}
+
+.index-container {
+	box-sizing: border-box;
+	padding-top: 50px;
 	display: flex;
 	flex-wrap: wrap;
 	gap: 60px;

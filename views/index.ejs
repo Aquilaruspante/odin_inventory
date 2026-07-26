@@ -1,5 +1,9 @@
 <%- include('./header.ejs'); %>
 
+<form action="/film" class="search-form" autocomplete="off">
+    <input type="text" class="genre-search-bar" placeholder="Search genre" name="q">
+</form>
+<div class="index-container">
     <% for (const film of films) { %>
         <div class="film-card">
             <a class="film-image-container" href="/film/<%= film.id %>"><img src="<%= film.image %>" alt="<%= film.name %> image"></a>    
@@ -12,5 +16,7 @@
             </p>
         </div>
     <% } %>
+</div>
+    
 </main>
 </body>

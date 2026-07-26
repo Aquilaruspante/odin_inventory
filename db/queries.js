@@ -3,18 +3,31 @@ const genreCache = require('./genreCache');
 
 /* ---------------------------------- FILMS -------------------------------------*/ 
 
-exports.filmListGet = async function filmListGet () {
-    const { rows } = await pool.query(`
+exports.filmListGet = async function filmListGet (q) {
+    if (q === '' || q === undefined) {
+        const { rows } = await pool.query(`
             SELECT f.id, f.name, f.year, f.image, f.director, 
             array_agg(g.name) AS genres
             FROM films f 
             LEFT JOIN relations ON f.id = relations.film_id 
             LEFT JOIN genres g ON relations.genre_id = g.id
             GROUP BY f.id, f.name, f.year, f.image, f.director;
-                    `
-    );
-
-    return rows;
+            `
+        );
+        return rows;
+    } else {
+        const { rows } = await pool.query(`
+            SELECT f.id, f.name, f.year, f.image, f.director, 
+            array_agg(g.name) AS genres
+            FROM films f 
+            LEFT JOIN relations ON f.id = relations.film_id 
+            LEFT JOIN genres g ON relations.genre_id = g.id
+            WHERE f.name ILIKE $1
+            GROUP BY f.id, f.name, f.year, f.image, f.director;
+            `
+        , [`%${q}%`]);
+        return rows;
+    };
 };
 
 exports.filmCreate = async function filmCreate (name, year, director, image, genre) {
@@ -131,7 +144,6 @@ exports.filmsListByGenreGet = async function filmsListByGenreGet(q) {
             LEFT JOIN films f ON r.film_id = f.id   
             GROUP BY g.name;
         `);
-        console.log('rows', rows);
         return rows;
     } else {
         const { rows } = await pool.query(`
@@ -141,10 +153,9 @@ exports.filmsListByGenreGet = async function filmsListByGenreGet(q) {
             FROM genres g
             LEFT JOIN relations r ON g.id = r.genre_id
             LEFT JOIN films f ON r.film_id = f.id 
-            WHERE g.name LIKE $1 
+            WHERE g.name ILIKE $1 
             GROUP BY g.name;
         `, [`%${q}%`]);
-        console.log('rowssss', rows);
         return rows;
     }
 };
