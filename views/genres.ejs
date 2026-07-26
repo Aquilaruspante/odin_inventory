@@ -1,9 +1,12 @@
 <%- include('./header.ejs'); %>
 
+<form action="/genre" class="search-form" autocomplete="off">
+    <input type="text" class="genre-search-bar" placeholder="Search genre" name="q">
+</form>
 <div class="genres-container">
     <% for (const genre of genres) { %>
         <div class="genre-card">
-            <div class="genre-title oswald-card-title"><div><%= genre.genre %></div><div># <%= genre.films.length %></div></div>
+            <div class="genre-title oswald-card-title"><div><%= genre.genre %></div><div>Items: <%= genre.films.length %></div></div>
             <% const films = genre.films %>
             <div class="film-list">
                 <% for (let film of films) { %>
@@ -17,3 +20,5 @@
         </div>
     <% } %>
 </div>
+</main>
+</body>

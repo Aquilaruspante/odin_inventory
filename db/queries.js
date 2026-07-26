@@ -120,15 +120,31 @@ exports.genresListGet = async function genresListGet() {
     return genres;
 };
 
-exports.filmsListByGenreGet = async function filmsListByGenreGet() {
-    const { rows } = await pool.query(`
+exports.filmsListByGenreGet = async function filmsListByGenreGet(q) {
+    if (q === '' || q === undefined) {
+        const { rows } = await pool.query(`
             SELECT g.name AS genre,
                 json_agg(json_build_object('name', f.name, 'image', f.image, 'id', f.id)) 
                     FILTER (WHERE f.name IS NOT NULL) AS films
             FROM genres g
             LEFT JOIN relations r ON g.id = r.genre_id
-            LEFT JOIN films f ON r.film_id = f.id
+            LEFT JOIN films f ON r.film_id = f.id   
             GROUP BY g.name;
         `);
-    return rows;
+        console.log('rows', rows);
+        return rows;
+    } else {
+        const { rows } = await pool.query(`
+            SELECT g.name AS genre,
+                json_agg(json_build_object('name', f.name, 'image', f.image, 'id', f.id)) 
+                    FILTER (WHERE f.name IS NOT NULL) AS films
+            FROM genres g
+            LEFT JOIN relations r ON g.id = r.genre_id
+            LEFT JOIN films f ON r.film_id = f.id 
+            WHERE g.name LIKE $1 
+            GROUP BY g.name;
+        `, [`%${q}%`]);
+        console.log('rowssss', rows);
+        return rows;
+    }
 };
