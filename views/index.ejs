@@ -21,4 +21,9 @@
 <a href="/film/new" id="new-link">
     <button id="new-button">+</button>
 </a>
+<div class="pages">
+    <% for (i = 1; i <= (films.length / 5) + 1; i++) { %>
+        <a href="/film?page=<%= i %>"><%= i %></a>
+    <% } %>
+</div>
 <%- include('./footer.ejs') %>

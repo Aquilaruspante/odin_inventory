@@ -1,3 +1,2 @@
 better styling
-media queries
 pagination

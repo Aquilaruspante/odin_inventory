@@ -3,7 +3,9 @@ const genreCache = require('./genreCache');
 
 /* ---------------------------------- FILMS -------------------------------------*/ 
 
-exports.filmListGet = async function filmListGet (q) {
+exports.filmListGet = async function filmListGet (q, page) {
+    if (page === undefined) page = 1;
+    const offset = (page - 1) * 5;
     if (q === '' || q === undefined) {
         const { rows } = await pool.query(`
             SELECT f.id, f.name, f.year, f.image, f.director, 
@@ -11,9 +13,10 @@ exports.filmListGet = async function filmListGet (q) {
             FROM films f 
             LEFT JOIN relations ON f.id = relations.film_id 
             LEFT JOIN genres g ON relations.genre_id = g.id
-            GROUP BY f.id, f.name, f.year, f.image, f.director;
+            GROUP BY f.id, f.name, f.year, f.image, f.director
+            LIMIT 5 OFFSET $1;
             `
-        );
+        , [offset]);
         return rows;
     } else {
         const { rows } = await pool.query(`
@@ -23,9 +26,10 @@ exports.filmListGet = async function filmListGet (q) {
             LEFT JOIN relations ON f.id = relations.film_id 
             LEFT JOIN genres g ON relations.genre_id = g.id
             WHERE f.name ILIKE $1
-            GROUP BY f.id, f.name, f.year, f.image, f.director;
+            GROUP BY f.id, f.name, f.year, f.image, f.director
+            LIMIT 5 OFFSET $2;
             `
-        , [`%${q}%`]);
+        , [`%${q}%`, offset]);
         return rows;
     };
 };
