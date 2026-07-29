@@ -136,7 +136,7 @@ main {
 	margin: auto;
 	box-sizing: border-box;
 	padding-top: 50px;
-	height: calc(100vh - 60px - 60px);
+	min-height: calc(100vh - 60px - 60px);
 }
 
 .index-container {
@@ -637,10 +637,16 @@ img {
 	color: var(--text-color);
 }
 
+@media (max-height: 820px) {
+	main {
+		margin-bottom: 30px;
+	}
+}
 
 @media (max-width: 1000px) {
 	main {
 		max-width: 800px;
+		margin-bottom: 30px;
 	}
 
 	header {
