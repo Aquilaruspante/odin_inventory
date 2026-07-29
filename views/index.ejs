@@ -22,8 +22,20 @@
     <button id="new-button">+</button>
 </a>
 <div class="pages">
-    <% for (i = 1; i <= (films.length / 5) + 1; i++) { %>
-        <a href="/film?page=<%= i %>"><%= i %></a>
+    <% if (parseInt(locals.currentPage) !== 1) { %>
+        <a href="/film?page=<%= parseInt(locals.currentPage) - 1 %>"><</a>
+    <% } %>
+    <% if (filmCount[0].count % 10 === 0) { %>
+        <% for (i = 1; i <= (filmCount[0].count / 10); i++) { %>
+            <a href="/film?page=<%= i %>"><%= i %></a>
+        <% } %>
+    <% } else { %>
+        <% for (i = 1; i <= (filmCount[0].count / 10) + 1; i++) { %>
+            <a href="/film?page=<%= i %>"><%= i %></a>
+        <% } %>
+    <% } %>
+    <% if (parseInt(locals.currentPage) < (filmCount[0].count / 10)) { %>
+        <a href="/film?page=<%= parseInt(locals.currentPage) + 1 %>">></a>
     <% } %>
 </div>
 <%- include('./footer.ejs') %>

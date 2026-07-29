@@ -3,10 +3,14 @@ const genreCache = require('../db/genreCache');
 const { matchedData, validationResult } = require('express-validator');
 
 exports.filmListGet = async function filmListGet (req, res, next) {
-    const { q, page } = req.query;
+    let { q, page } = req.query;
+    if (page === undefined) page = 1;
+    res.locals.currentPage = page;
+    const filmCount = await db.countFilms();
+    console.log(filmCount[0].count);
     try {
         const films = await db.filmListGet(q, page);
-        res.render('index', { films });
+        res.render('index', { films, filmCount });
     } catch (error) {
         next(error);
     };

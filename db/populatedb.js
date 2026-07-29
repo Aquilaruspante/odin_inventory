@@ -20,7 +20,9 @@ const SQL = `
             ('Ace Ventura: When nature calls', 1994, 'Tom Shadyac', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4dj-6EtXgtDGkUUW0HaspN1g-H2XWImT4qLeWkWeqIg&s=10'),
             ('Hereditary', 2018, 'Ari Aster', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7XzdY6rS1wRVm1pwELh2D034n0NYD38QY0WuW6DP7eg&s=10'),
             ('American Pie', 1999, 'Paul Weitz', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRT2-As6E_KerQSWw50waUMNoA2bSaS_XS-b5_PrIVKQfIBoTK4x_DnfqRFcXGzHMpQKIXhddkeHsiXTFi9pTnpv8fWNR3El9dK9O3tMxrG2g&s=10'),
-            ('Midsommar', 2019, 'Ari Aster', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHcJEtTaJ3-lCQtlJiYYijOG6z-ZkU7Q65M1eRt17qqJWLVEMmegkQnTreMVQvXzx4N0Ks-aBXSQr9-18h5cZZypHSGriZ6GWpO-ZR3WRJ&s=10');
+            ('Midsommar', 2019, 'Ari Aster', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHcJEtTaJ3-lCQtlJiYYijOG6z-ZkU7Q65M1eRt17qqJWLVEMmegkQnTreMVQvXzx4N0Ks-aBXSQr9-18h5cZZypHSGriZ6GWpO-ZR3WRJ&s=10'),
+            ('Sleepy Hollow', 2000, 'Tim Burton', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQt44_NJ8jqNiE52guzCvt76zywC09eT3SrtXblNydlh4RXICLwi67M_4K0Tv8LiHWgoAwnMGAy0vfbc1zkQ76ZMZ6-UFgoBE7A0z-OoAnY&s=10'),
+            ('Edward Scissorhands', 1991, 'Tim Burton', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTulgxJ3n6dny8-kjxP5XWoRfVlszp4i-glGJo0b0lG-g&s=10');
             
     
     CREATE TABLE IF NOT EXISTS genres (
@@ -73,7 +75,10 @@ const SQL = `
             (8, 2),
             (9, 3),
             (10, 2),
-            (10, 1);
+            (10, 1),
+            (11, 2),
+            (12, 1),
+            (12, 2);
 `;
 
 async function main() {
