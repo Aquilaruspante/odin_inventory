@@ -3,11 +3,20 @@ const genreCache = require('./genreCache');
 
 /* ---------------------------------- FILMS -------------------------------------*/ 
 
-exports.countFilms = async function countFilms(){
-    const { rows } = await pool.query(`
+exports.countFilms = async function countFilms(q){
+    if (q === '' || q === undefined) {
+        const { rows } = await pool.query(`
             SELECT COUNT(*) FROM films;        
         `);
-    return rows;
+        return rows;
+    } else {
+        const { rows } = await pool.query(`
+                SELECT COUNT(name) FROM films
+                WHERE name ILIKE $1;
+            `, [`%${q}%`]);
+        return rows;
+    };
+    
 };
 
 exports.filmListGet = async function filmListGet (q, page) {

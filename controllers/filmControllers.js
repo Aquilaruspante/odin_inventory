@@ -6,7 +6,8 @@ exports.filmListGet = async function filmListGet (req, res, next) {
     let { q, page } = req.query;
     if (page === undefined) page = 1;
     res.locals.currentPage = page;
-    const filmCount = await db.countFilms();
+    const filmCount = await db.countFilms(q);
+    console.log(filmCount);
     try {
         const films = await db.filmListGet(q, page);
         res.render('index', { films, filmCount });

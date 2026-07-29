@@ -470,8 +470,8 @@ img {
 .film-thumbnail {
 	object-fit: cover;
 	object-position: 25% 25%;
-	width: 25px;
-	height: 25px;
+	width: 30px;
+	height: 30px;
 }
 
 .film-descriptor {

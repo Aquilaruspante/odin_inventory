@@ -1,2 +1,2 @@
 better styling
-pagination
+media query
