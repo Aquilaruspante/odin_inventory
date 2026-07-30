@@ -637,6 +637,10 @@ img {
 	color: var(--text-color);
 }
 
+.genre-search {
+	margin-bottom: 50px;
+}
+
 @media (max-height: 820px) {
 	main {
 		margin-bottom: 30px;
@@ -739,6 +743,10 @@ img {
 
 	.index-container {
 		row-gap: 50px;
+	}
+
+	.genres-container {
+		padding: 30px;
 	}
 }
 
