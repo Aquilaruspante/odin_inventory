@@ -43,7 +43,6 @@ function showAddNewGenreLi(text) {
 };
 
 addNewGenreLi.addEventListener('mousedown', (e) => {
-    console.log('clicking');
     addItem(genreInput.value, e, true);
     genreInput.value = '';
     addNewGenreLi.innerHTML = '';
