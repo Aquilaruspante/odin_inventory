@@ -431,7 +431,6 @@ img {
 .genres-container {
 	display: flex;
 	flex-direction: column;
-	width: 100%;
 }
 
 .genre-card {
@@ -746,7 +745,10 @@ img {
 	}
 
 	.genres-container {
-		padding: 30px;
+		max-width: 350px;
+		margin: auto;
 	}
 }
+
+
 
