@@ -736,5 +736,9 @@ img {
 	.form-input {
 		width: 100%;
 	}
+
+	.index-container {
+		row-gap: 50px;
+	}
 }
 
