@@ -397,6 +397,10 @@ img {
 	font-size: 1rem;
 }
 
+.add-new-genre:hover {
+	cursor: pointer;
+}
+
 .new-genre-span {
 	font-weight: 400;
 }

@@ -4,6 +4,7 @@ const toggleMenuItems = document.querySelectorAll('.genre-selection-element');
 const genreDisplay = document.querySelector('.genre-display');
 const genreDisplayPlaceholder = document.querySelector('.genre-display-placeholder');
 const addNewGenreLi = document.querySelector('.add-new-genre');
+const newGenreSpan = document.querySelector('.new-genre-span');
 const genreDisplayLegend = document.querySelector('.genre-display-legend');
 
 let counter = 0;
@@ -37,9 +38,17 @@ function showAddNewGenreLi(text) {
     if (text) {
         menu.classList.remove('hidden');
         
-        addNewGenreLi.innerHTML = `Press Tab/Enter to create <span class="new-genre-span">"${text}"</span> as a new genre...`
+        addNewGenreLi.innerHTML = `Press Tab/Click to create <span class="new-genre-span">"${text}"</span> as a new genre...`;
     };
 };
+
+addNewGenreLi.addEventListener('mousedown', (e) => {
+    console.log('clicking');
+    addItem(genreInput.value, e, true);
+    genreInput.value = '';
+    addNewGenreLi.innerHTML = '';
+    menu.classList.add('hidden');
+});
 
 function manageVisibleItems(item, e) {
     // if the item does not include the text passed by event "e" hide the item
