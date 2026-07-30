@@ -697,6 +697,10 @@ img {
 	.search-form {
 		max-width: 300px;
 	}
+
+	.form {
+		min-width: 400px;
+	}
 }
 
 
@@ -718,6 +722,19 @@ img {
 	#new-link {
 		right: 16px;
 		bottom: 16px;
+	}
+
+	.form {
+		min-width: 300px;
+	}
+
+	.form-section {
+		flex-direction: column;
+		gap: 8px;
+	}
+
+	.form-input {
+		width: 100%;
 	}
 }
 
