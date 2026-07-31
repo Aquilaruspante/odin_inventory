@@ -583,15 +583,18 @@ img {
 	color: var(--secondary-negative-color);
 }
 
-.side-first-line {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding-right: 8px;
+.first-line {
+	margin-top: 30px;
 }
 
 .visible {
 	transform: translate(0%);
+}
+
+.side-menu-close {
+	position: absolute;
+	right: 12px;
+	top: 12px;	
 }
 
 .side-menu-close:hover {
