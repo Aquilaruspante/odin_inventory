@@ -754,6 +754,7 @@ img {
 	.genres-container {
 		max-width: 350px;
 		margin: auto;
+		padding: 32px;
 	}
 }
 
