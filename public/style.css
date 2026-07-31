@@ -444,12 +444,13 @@ img {
 }
 
 .genre-title {
-	height: 25px;
-	font-size: 1.3rem;
+	height: 32px;
+	font-size: 1.5rem;
 	border-bottom: solid 1px rgb(189, 166, 126);
 	box-sizing: border-box;
 	display: flex;
 	justify-content: space-between;
+	margin-bottom: 16px;
 }
 
 .film-list {
