@@ -511,6 +511,10 @@ img {
 	font-size: 1.5rem;
 }
 
+.single-film-element a {
+	color: var(--text-color);
+}
+
 .single-film-button {
 	font-size: 1.3rem;
 	display: flex;

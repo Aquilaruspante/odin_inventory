@@ -9,7 +9,7 @@
         <div class="single-film-element single-genres"> 
             <div>Genres: </div>
             <% for (const genre of film.genres) { %>
-                <div><%= genre %>  </div>
+                <a href="/genre/?q=<%= genre %>"><%= genre %>  </a>
             <% } %>
         </div> 
         <div class="single-film-button-section button-section">
