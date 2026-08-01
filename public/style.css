@@ -666,13 +666,14 @@ img {
 	.single-film-card {
 		flex-direction: column;
 		max-width: 400px;
-		height: 500px;
+		height: 550px;
 		gap: 30px;
 		align-items: center;
 	}
 
 	.single-film-details {
 		width: 100%;
+		height: 300px;
 	}
 }
 
