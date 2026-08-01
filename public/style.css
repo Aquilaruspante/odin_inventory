@@ -487,8 +487,6 @@ img {
 	height: 300px;
 	width: 700px;
 	display: flex;
-	border: 1px solid var(--secondary-color);
-	border-radius: 5px;
 	margin: auto;
 }
 
@@ -663,6 +661,18 @@ img {
 	header {
 		max-width: 800px;
 		margin: auto;
+	}
+
+	.single-film-card {
+		flex-direction: column;
+		max-width: 400px;
+		height: 500px;
+		gap: 30px;
+		align-items: center;
+	}
+
+	.single-film-details {
+		width: 100%;
 	}
 }
 
