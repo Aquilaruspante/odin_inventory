@@ -767,6 +767,10 @@ img {
 		margin: auto;
 		padding: 32px;
 	}
+
+	.single-film-card {
+		width: 350px;
+	}
 }
 
 
